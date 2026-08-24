@@ -1,0 +1,16 @@
+{
+  "name": "molonta-estate-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site-pitch demo for Molonta Heritage Estate - new one-page site, framed current site, and the offer, on Cloudflare Workers static assets.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "check": "wrangler deploy --dry-run",
+    "verify": "node scripts/verify-layout.js --dir \"$PWD/public\" --routes \"/,/offer/\" --fonts \"Cormorant Garamond,Inter\" --original-host molontaheritageestate.com"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0",
+    "playwright-core": "^1.49.0"
+  }
+}
