@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>The offer — Molonta Heritage Estate</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../fonts/fonts.css">
+  <style>
+    :root{
+      --op-bg:#f4eee1;          /* harvested from the new site */
+      --op-ink:#22271f;
+      --op-accent:#b0512c;
+      --op-panel:#fdfbf5;
+      --op-dark:#142320;
+      --op-display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+      --op-body:"Inter",system-ui,-apple-system,sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--op-bg);color:var(--op-ink);
+      font:400 16px/1.55 var(--op-body)}
+    h1,h2,h3{font-family:var(--op-display);font-weight:600;
+      line-height:1.05;letter-spacing:.01em;margin:0 0 .4em;
+      max-width:none;hyphens:none;overflow-wrap:normal} /* law 2 + law 1 */
+    h1{font-size:clamp(2.1rem,7.5vw,3.6rem)}            /* law 1: ceiling fits the
+                                                           longest single word at 320px */
+    h2{font-size:clamp(1.5rem,4.5vw,2.2rem)}
+    h3{font-weight:700}
+    p{max-width:65ch}
+    section{padding:56px 20px}
+    .wrap{max-width:1040px;margin:0 auto}
+    .band-dark{background:var(--op-dark);color:#f2ecdd}
+    .band-panel{background:var(--op-panel)}
+    .kicker{font:800 12px/1 var(--op-body);letter-spacing:.16em;
+      text-transform:uppercase;color:var(--op-accent);margin:0 0 10px}
+    .band-dark .kicker{color:#d98d5f}
+    .grid{display:grid;gap:18px;
+      grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))} /* law 3 */
+    .card{background:var(--op-panel);border:1px solid rgba(0,0,0,.12);
+      padding:22px;position:relative}
+    .card .tag{position:absolute;top:0;right:0;background:var(--op-dark);
+      color:#fff;font:700 10px/1 var(--op-body);letter-spacing:.14em;
+      text-transform:uppercase;padding:6px 9px}
+    .btn{display:inline-block;background:var(--op-accent);color:#fff;
+      font:700 15px/1 var(--op-body);text-transform:uppercase;
+      letter-spacing:.06em;padding:15px 26px;text-decoration:none}
+    table{width:100%;border-collapse:collapse;background:var(--op-panel)}
+    th,td{padding:13px 14px;border:1px solid rgba(0,0,0,.14);
+      text-align:left;vertical-align:top;font-size:15px;overflow-wrap:anywhere}
+    thead th{background:var(--op-dark);color:#fff;font-family:var(--op-display);
+      letter-spacing:.05em}
+    td:first-child{width:50%}
+    .price{font:700 clamp(2.6rem,9vw,4rem)/1 var(--op-display)}
+    .price small{font:600 13px/1.3 var(--op-body);text-transform:uppercase;
+      letter-spacing:.08em;display:block;margin-top:8px;color:inherit;opacity:.75}
+    .struck{opacity:.65}
+    .struck s{text-decoration-thickness:2px}
+    .strip{display:grid;gap:2px;
+      grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));
+      background:rgba(0,0,0,.14)}
+    .strip div{background:var(--op-panel);padding:16px;font-size:14px}
+    .strip b{display:block;font-family:var(--op-display);font-size:19px;
+      font-weight:700;margin-bottom:4px}
+  </style>
+</head>
+<body>
+<style id="pitch-bar-css">
+  #pitch-bar{position:fixed;top:0;left:0;right:0;z-index:2147483000;
+    box-sizing:border-box;display:flex;align-items:center;gap:6px;height:48px;
+    padding:0 12px;background:#0c0c0c;color:#eee;
+    font:600 13px/1 system-ui,-apple-system,"Segoe UI",sans-serif;
+    border-bottom:2px solid var(--pitch-accent,#e8b33a)}
+  #pitch-bar *{box-sizing:border-box;margin:0}
+  #pitch-bar .pitch-chip{background:var(--pitch-accent,#e8b33a);color:#0c0c0c;
+    font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    padding:4px 7px;border-radius:3px;margin-right:6px;flex:none}
+  #pitch-bar a{color:#bdbdbd;text-decoration:none;padding:16px 10px 14px;
+    white-space:nowrap;border-bottom:3px solid transparent}
+  #pitch-bar a:hover{color:#fff}
+  #pitch-bar a[aria-current="page"]{color:#fff;
+    border-bottom-color:var(--pitch-accent,#e8b33a)}
+  body{padding-top:48px !important}
+  @media (max-width:479px){
+    #pitch-bar{padding:0 6px;gap:2px}
+    #pitch-bar a{padding:16px 7px 14px;font-size:12px}
+    #pitch-bar .pitch-chip{margin-right:2px}
+  }
+</style>
+<nav id="pitch-bar" aria-label="Demo pages">
+  <span class="pitch-chip">Demo</span>
+  <a href="/">New site</a>
+  <a href="/original/">Current site</a>
+  <a href="/offer/" aria-current="page">The offer</a>
+</nav>
+
+<section class="band-dark">
+  <div class="wrap">
+    <p class="kicker">The offer</p>
+    <h1>A better site for Molonta Heritage Estate</h1>
+    <p>You've just seen it — the first tab is the new site, built from what
+      molontaheritageestate.com already says about you. This page is the deal.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Tale of the tape</h2>
+    <table>
+      <thead><tr><th>molontaheritageestate.com today</th><th>The new site</th></tr></thead>
+      <tbody>
+        <tr><td>Leftover template filler is live: the FAQ page shows the theme's
+            own sample text (&ldquo;Cormorant Garamond is a classic font&hellip;&rdquo;)
+            and the homepage press band shows a stray &ldquo;Heading&nbsp;5&rdquo;.</td>
+            <td>Every line on the new page is written for the estate, and
+            proofed.</td></tr>
+        <tr><td>The booking form misspells its own job: &ldquo;Request
+            Availibility&rdquo;, &ldquo;Preffered Departure Date&rdquo;, &ldquo;Tell us
+            what make your stay special&rdquo;.</td>
+            <td>A one-tap enquiry by email or phone, with the copy proofed
+            throughout.</td></tr>
+        <tr><td>The site can't settle its own numbers or name: 4.8&nbsp;ha on the
+            homepage, &ldquo;5 hectars&rdquo; on the FAQ, 4.5&nbsp;ha in the Gallery
+            page's description — which still introduces the estate to Google as
+            &ldquo;Villa Palma&rdquo;.</td>
+            <td>One name and one figure — 4.8 hectares (11 acres) — stated in the
+            hero and reused everywhere.</td></tr>
+        <tr><td>The 2026 rates sit most of the way down a very long homepage,
+            set as &ldquo;1850 Euro&rdquo;.</td>
+            <td>&euro;1,850 a night is in the hero card and the facts strip before
+            anyone scrolls, with a full Rates &amp; Stays tab beside it.</td></tr>
+        <tr><td>How many bedrooms? The site never says — the FAQ stops at
+            &ldquo;up to eight persons&rdquo;.</td>
+            <td>Sleeps 8 stated up front; send the bedroom count and it's live
+            within the changes window.</td></tr>
+        <tr><td>The header says &ldquo;Book Direct. Experience more.&rdquo; while
+            both press cards lead with Airbnb headlines.</td>
+            <td>Press framed as press — and the whole page argues the direct
+            case: the family's own line, the rates, no platform fees.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="band-panel">
+  <div class="wrap">
+    <h2>Two numbers, nothing monthly</h2>
+    <p class="struck"><s>&pound;1,500–&pound;8,000</s> what others charge,
+      freelance to agency.</p>
+    <div class="grid">
+      <div class="card"><span class="tag">The site</span>
+        <div class="price">&pound;500<small>One-off &middot; yours outright</small></div>
+      </div>
+      <div class="card"><span class="tag">Optional</span>
+        <div class="price">&pound;50<small>Two weeks of unlimited
+          changes</small></div>
+      </div>
+    </div>
+    <p style="margin-top:22px"><strong>Why it costs this:</strong> built by my
+      network of AI agents — heavy lifting in parallel, finished by hand.
+      Agency output without the agency invoice.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 data-one-line>Terms</h2>
+    <div class="strip">
+      <div><b>&pound;0 until transfer</b>Live same day on a temporary link. You pay
+        only on transfer to your own domain — only if you want it.</div>
+      <div><b>Flat fee</b>The two numbers above are the whole bill.</div>
+      <div><b>Try before you buy</b>Use the demo, send your changes, then decide.</div>
+      <div><b>No retainers</b>Nothing recurring, ever.</div>
+      <div><b>No lock-in</b>Walk away at any point before transfer and owe nothing.</div>
+    </div>
+  </div>
+</section>
+
+<section class="band-panel">
+  <div class="wrap">
+    <h2>You own everything</h2>
+    <div class="grid">
+      <div class="card"><span class="tag">The code</span>
+        <h3 data-one-line>Code</h3><p>Every file — yours outright.</p></div>
+      <div class="card"><span class="tag">The host</span>
+        <h3 data-one-line>Host</h3><p>Free web hosting for life, on Cloudflare.</p></div>
+      <div class="card"><span class="tag">The setup</span>
+        <h3 data-one-line>Setup</h3><p>I set it up and transfer it to you —
+          nothing to learn.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band-dark" style="text-align:center">
+  <div class="wrap">
+    <h2>Say the word</h2>
+    <p style="margin:0 auto">Reply to the message that brought you here.</p>
+  </div>
+</section>
+
+<!-- OPTIONAL referral band — left out: this pitch is a first contact
+     (references/offer.md §8).
+<section>
+  <div class="wrap">
+    <h2>Send a friend</h2>
+    <p>Pass this page on. They buy a site, you get paid —
+      <strong>&pound;50</strong> per referred purchase,
+      <strong>&pound;75</strong> a time once you're a customer
+      yourself.</p>
+  </div>
+</section>
+-->
+
+</body>
+</html>

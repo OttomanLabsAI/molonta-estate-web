@@ -1,0 +1,64 @@
+<!doctype html>
+<!-- site-pitch fallback for /original/ — capture-site.js could not make a clean
+  copy (the sandboxed build environment's network policy blocks the site; the
+  "capture" it returned was the proxy's block page, discarded). Per
+  references/capture.md this page says it is a frame of the live site, never
+  pretends to be a copy, and never gets swapped for a screenshot. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Current site — Molonta Heritage Estate</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <style>
+    html,body{margin:0;height:100%}
+    body{display:flex;flex-direction:column;background:#161616;box-sizing:border-box;
+      font:500 14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+    .frame-strip{background:#111;color:#f5efe0;padding:10px 16px;text-align:center}
+    .frame-strip a{color:var(--pitch-accent,#e8b33a)}
+    .frame-wrap{flex:1;min-height:0}
+    .frame-wrap iframe{display:block;width:100%;height:100%;border:0;background:#fff}
+  </style>
+</head>
+<body>
+<style id="pitch-bar-css">
+  #pitch-bar{position:fixed;top:0;left:0;right:0;z-index:2147483000;
+    box-sizing:border-box;display:flex;align-items:center;gap:6px;height:48px;
+    padding:0 12px;background:#0c0c0c;color:#eee;
+    font:600 13px/1 system-ui,-apple-system,"Segoe UI",sans-serif;
+    border-bottom:2px solid var(--pitch-accent,#e8b33a)}
+  #pitch-bar *{box-sizing:border-box;margin:0}
+  #pitch-bar .pitch-chip{background:var(--pitch-accent,#e8b33a);color:#0c0c0c;
+    font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    padding:4px 7px;border-radius:3px;margin-right:6px;flex:none}
+  #pitch-bar a{color:#bdbdbd;text-decoration:none;padding:16px 10px 14px;
+    white-space:nowrap;border-bottom:3px solid transparent}
+  #pitch-bar a:hover{color:#fff}
+  #pitch-bar a[aria-current="page"]{color:#fff;
+    border-bottom-color:var(--pitch-accent,#e8b33a)}
+  body{padding-top:48px !important}
+  @media (max-width:479px){
+    #pitch-bar{padding:0 6px;gap:2px}
+    #pitch-bar a{padding:16px 7px 14px;font-size:12px}
+    #pitch-bar .pitch-chip{margin-right:2px}
+  }
+</style>
+<nav id="pitch-bar" aria-label="Demo pages">
+  <span class="pitch-chip">Demo</span>
+  <a href="/">New site</a>
+  <a href="/original/" aria-current="page">Current site</a>
+  <a href="/offer/">The offer</a>
+</nav>
+<div class="frame-strip">
+  Their live site at <strong>molontaheritageestate.com</strong>, shown in a frame — a clean
+  copy couldn't be made (the demo build environment can't reach the site over the network). Framed 24 August 2026.
+  <a href="https://www.molontaheritageestate.com/" target="_blank" rel="noopener nofollow">Open it in its
+  own tab</a> if it doesn't appear below.
+</div>
+<div class="frame-wrap">
+  <iframe src="https://www.molontaheritageestate.com/" title="Live site: Molonta Heritage Estate"
+    referrerpolicy="no-referrer" loading="eager"></iframe>
+</div>
+</body>
+</html>
