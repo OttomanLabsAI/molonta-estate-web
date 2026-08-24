@@ -4,49 +4,222 @@
   "captured": "2026-08-24",
   "capture_note": "Clean copy FAILED — this build environment's network egress policy blocks molontaheritageestate.com, so capture-site.js received only the proxy's block page. /original/ is the frame fallback per references/capture.md. All site facts below were read from the live pages via fetch on 2026-08-24.",
   "brand": {
-    "colors": { "value": ["#f4eee1 (stone ground)", "#fdfbf5 (plaster panel)", "#22271f (cypress ink)", "#142320 (deep band)", "#b0512c (terracotta accent)", "#6b7040 olive / #1d5f6e adriatic / #c07a1f citrus (tab coding)"], "source": "site:photography+copy (derived by us from the estate's own materials — terracotta roofs, stone paths, olive groves, the Adriatic; no CSS was reachable)", "seen": "2026-08-24", "confidence": "unconfirmed" },
-    "display_font": { "value": "Cormorant Garamond", "source": "site:/faq — the theme's own font-description filler text left live on the page names it", "seen": "2026-08-24", "confidence": "unconfirmed" },
-    "body_font": { "value": "Inter", "source": "house default (house-style.md) — their body face not identifiable", "seen": "2026-08-24", "confidence": "unconfirmed" },
-    "logo": { "value": "none found — wordmark is set type: MOLONTA HERITAGE ESTATE, uppercase", "source": "site:header", "seen": "2026-08-24", "confidence": "confirmed" },
-    "tone": { "value": "serene, unhurried, family-heritage, understated luxury; the estate's own line: \u201cthe Mediterranean as it once was\u201d; strapline \u201cBook Direct. Experience more.\u201d", "source": "site:copy (home, /faq, /history-heritage)", "seen": "2026-08-24", "confidence": "confirmed" }
+    "colors": {
+      "value": [
+        "#ffffff (white ground)",
+        "#3d2b1f (walnut ink)",
+        "#f7f1e6 (cream panel — their IG mark's ground)",
+        "#2c2016 (espresso band)",
+        "#b0512c (terracotta accent)",
+        "#63492e / #7a5230 / #8a5a33 / #b0512c (tonal brown tab ramp)"
+      ],
+      "source": "Client direction (Fid, 2026-08-24: white background, brown text) + the estate's Instagram identity — brown MOLONTA serif wordmark on a cream ground (@molontaestate avatar and video watermark, screenshot 2026-08-24)",
+      "confirmed": true
+    },
+    "display_font": {
+      "value": "Cormorant Garamond",
+      "source": "site:/faq — the theme's own font-description filler text left live on the page names it — corroborated 2026-08-24: the @molontaestate post overlay ('Poolside, with a view.') matches Cormorant Garamond",
+      "seen": "2026-08-24",
+      "confidence": "unconfirmed",
+      "confirmed": true
+    },
+    "body_font": {
+      "value": "Inter",
+      "source": "house default (house-style.md) — their body face not identifiable",
+      "seen": "2026-08-24",
+      "confidence": "unconfirmed"
+    },
+    "logo": {
+      "value": "none found — wordmark is set type: MOLONTA HERITAGE ESTATE, uppercase",
+      "source": "site:header",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "tone": {
+      "value": "serene, unhurried, family-heritage, understated luxury; the estate's own line: “the Mediterranean as it once was”; strapline “Book Direct. Experience more.”",
+      "source": "site:copy (home, /faq, /history-heritage)",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    }
   },
   "facts": {
-    "offering": { "value": "Fully private luxury villa rental near Dubrovnik — the entire waterfront estate reserved for one group at a time; owner-hosted", "source": "site:/faq q1, q7", "seen": "2026-08-24", "confidence": "confirmed" },
-    "sleeps": { "value": "Up to 8 guests; 2 more possible on request in a separate apartment", "source": "site:/faq q5", "seen": "2026-08-24", "confidence": "confirmed" },
-    "estate_size": { "value": "4.8 hectares (11 acres) — 48,000 m2", "source": "site:home + site:/history-heritage", "seen": "2026-08-24", "confidence": "confirmed" },
-    "location": { "value": "Western bay of Molunat, far south of Croatia, near Dubrovnik; one of the few undeveloped bays on the mainland Adriatic", "source": "site:home + site:/history-heritage", "seen": "2026-08-24", "confidence": "confirmed" },
-    "address": { "value": "Molunat 6, 20218 Molunat, Croatia", "source": "site:footer", "seen": "2026-08-24", "confidence": "confirmed" },
-    "map": { "value": "Google Maps place at 42.4540911, 18.4262772 (listing URL slug still reads Villa Palma)", "source": "site:footer map link", "seen": "2026-08-24", "confidence": "confirmed" },
-    "phone": { "value": "+385 98 428 555", "source": "site:footer", "seen": "2026-08-24", "confidence": "confirmed" },
-    "email": { "value": "info@molontaheritageestate.com", "source": "site:footer", "seen": "2026-08-24", "confidence": "confirmed" },
-    "airport": { "value": "About 25 minutes' drive from Dubrovnik Airport (DBV); private transfers arranged; car hire not recommended in high season", "source": "site:/faq q13-q14", "seen": "2026-08-24", "confidence": "confirmed" },
-    "rates_2026": { "value": "May & October €1,850/night · June & September €2,250/night · July & August €19,950/week", "source": "site:home (written there as '1850 Euro' etc.)", "seen": "2026-08-24", "confidence": "confirmed" },
-    "minimum_stay": { "value": "July & August: 7 nights, Saturday-to-Saturday only; other months: 3 nights, arrival any day", "source": "site:home + site:/booking", "seen": "2026-08-24", "confidence": "confirmed" },
-    "rates_2027": { "value": "2027 rates released 1 October 2026; early enquiries direct", "source": "site:home", "seen": "2026-08-24", "confidence": "confirmed" },
-    "included": { "value": "Full private estate rental · dedicated concierge & personalised service (24/7 support) · daily housekeeping & pool maintenance · curated welcome & pre-arrival preparation", "source": "site:home + site:/faq q2", "seen": "2026-08-24", "confidence": "confirmed" },
-    "pool": { "value": "Private infinity pool, 14 x 5 m, overlooking the Adriatic", "source": "site:/faq q2 + site:/experience", "seen": "2026-08-24", "confidence": "confirmed" },
-    "beach": { "value": "Private beach with sunchairs, shower, kayak and boat mooring; sun-warmed stone platforms, direct sea access", "source": "site:/faq q2 + site:/experience", "seen": "2026-08-24", "confidence": "confirmed" },
-    "amenities": { "value": "Hot tub for 5 · game room with home cinema and billiards · outdoor gym · al fresco dining & outdoor kitchen · private parking · free wifi · Mediterranean gardens", "source": "site:/faq q2 + site:home + site:/experience", "seen": "2026-08-24", "confidence": "confirmed" },
-    "yacht": { "value": "Private motor yacht with skipper, exclusive to estate guests (Jeanneau Prestige 34, per /experience photo caption; '34-foot' per /faq q3) — Dubrovnik reachable by sea, docking at the Old Town port; Konavle cliffs; island day trips", "source": "site:/faq q3-q4, q15 + site:/experience", "seen": "2026-08-24", "confidence": "confirmed" },
-    "food": { "value": "Private chef & catered dining at the villa; grocery stocking & restaurant delivery arranged; estate produce: organic olive oil from 250-year-old trees, wine, citrus, figs, carob, jams, homemade liqueurs; local restaurant 500 m away, more ~15 min", "source": "site:/faq q3, q11-q12 + site:home + site:/history-heritage", "seen": "2026-08-24", "confidence": "confirmed" },
-    "events": { "value": "Private retreats, wellness stays, small weddings and small curated events considered on request", "source": "site:/faq q9", "seen": "2026-08-24", "confidence": "confirmed" },
-    "direct_booking": { "value": "Direct bookings: best available rates, no third-party platform fees, direct line to the owners, complimentary exclusive amenities", "source": "site:/faq q7-q8 + site:header strapline", "seen": "2026-08-24", "confidence": "confirmed" },
-    "history": { "value": "Family-owned; house built in the 1930s by the Metkovic family from local stone and estate cypress; named Villa Palma by Mato Metkovic in 1966; original walls preserved in the recent renovation; now run by the third generation, 60+ years of welcoming guests", "source": "site:/history-heritage", "seen": "2026-08-24", "confidence": "confirmed" },
-    "press_cnt": { "value": "Conde Nast Traveler — \u201cMy favorite Airbnb: A Dreamy Croatian Villa Overlooking the Adriatic\u201d", "source": "site:home press band (links to cntraveler.com)", "seen": "2026-08-24", "confidence": "confirmed" },
-    "press_ad": { "value": "Architectural Digest — \u201cThe Best Airbnbs in Croatia for an Adriatic Summer\u201d", "source": "site:home press band (links to architecturaldigest.com)", "seen": "2026-08-24", "confidence": "confirmed" },
-    "testimonial_1": { "value": "\u201cIt is a very special place with very special people! Our hearts are full and we couldn't recommend this place enough!\u201d — Sergiu, Austria", "source": "site:home guest impressions", "seen": "2026-08-24", "confidence": "confirmed" },
-    "testimonial_2": { "value": "\u201cThank you for everything! Because you have created this wonderful place, we had great time and joy here.\u201d — Marijana, Pasqual, Marcus and Christiane, Germany (addressed to hosts Lucija, Sanja & Niksa)", "source": "site:home guest impressions", "seen": "2026-08-24", "confidence": "confirmed" },
-    "socials": { "value": "instagram.com/molontaestate · facebook.com/profile.php?id=61570588708381", "source": "site:footer", "seen": "2026-08-24", "confidence": "confirmed" }
+    "offering": {
+      "value": "Fully private luxury villa rental near Dubrovnik — the entire waterfront estate reserved for one group at a time; owner-hosted",
+      "source": "site:/faq q1, q7",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "sleeps": {
+      "value": "Up to 8 guests; 2 more possible on request in a separate apartment",
+      "source": "site:/faq q5",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "estate_size": {
+      "value": "4.8 hectares (11 acres) — 48,000 m2",
+      "source": "site:home + site:/history-heritage",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "location": {
+      "value": "Western bay of Molunat, far south of Croatia, near Dubrovnik; one of the few undeveloped bays on the mainland Adriatic",
+      "source": "site:home + site:/history-heritage",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "address": {
+      "value": "Molunat 6, 20218 Molunat, Croatia",
+      "source": "site:footer",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "map": {
+      "value": "Google Maps place at 42.4540911, 18.4262772 (listing URL slug still reads Villa Palma)",
+      "source": "site:footer map link",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "phone": {
+      "value": "+385 98 428 555",
+      "source": "site:footer",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "email": {
+      "value": "info@molontaheritageestate.com",
+      "source": "site:footer",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "airport": {
+      "value": "About 25 minutes' drive from Dubrovnik Airport (DBV); private transfers arranged; car hire not recommended in high season",
+      "source": "site:/faq q13-q14",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "rates_2026": {
+      "value": "May & October €1,850/night · June & September €2,250/night · July & August €19,950/week",
+      "source": "site:home (written there as '1850 Euro' etc.)",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "minimum_stay": {
+      "value": "July & August: 7 nights, Saturday-to-Saturday only; other months: 3 nights, arrival any day",
+      "source": "site:home + site:/booking",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "rates_2027": {
+      "value": "2027 rates released 1 October 2026; early enquiries direct",
+      "source": "site:home",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "included": {
+      "value": "Full private estate rental · dedicated concierge & personalised service (24/7 support) · daily housekeeping & pool maintenance · curated welcome & pre-arrival preparation",
+      "source": "site:home + site:/faq q2",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "pool": {
+      "value": "Private infinity pool, 14 x 5 m, overlooking the Adriatic",
+      "source": "site:/faq q2 + site:/experience",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "beach": {
+      "value": "Private beach with sunchairs, shower, kayak and boat mooring; sun-warmed stone platforms, direct sea access",
+      "source": "site:/faq q2 + site:/experience",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "amenities": {
+      "value": "Hot tub for 5 · game room with home cinema and billiards · outdoor gym · al fresco dining & outdoor kitchen · private parking · free wifi · Mediterranean gardens",
+      "source": "site:/faq q2 + site:home + site:/experience",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "yacht": {
+      "value": "Private motor yacht with skipper, exclusive to estate guests (Jeanneau Prestige 34, per /experience photo caption; '34-foot' per /faq q3) — Dubrovnik reachable by sea, docking at the Old Town port; Konavle cliffs; island day trips",
+      "source": "site:/faq q3-q4, q15 + site:/experience",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "food": {
+      "value": "Private chef & catered dining at the villa; grocery stocking & restaurant delivery arranged; estate produce: organic olive oil from 250-year-old trees, wine, citrus, figs, carob, jams, homemade liqueurs; local restaurant 500 m away, more ~15 min",
+      "source": "site:/faq q3, q11-q12 + site:home + site:/history-heritage",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "events": {
+      "value": "Private retreats, wellness stays, small weddings and small curated events considered on request",
+      "source": "site:/faq q9",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "direct_booking": {
+      "value": "Direct bookings: best available rates, no third-party platform fees, direct line to the owners, complimentary exclusive amenities",
+      "source": "site:/faq q7-q8 + site:header strapline",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "history": {
+      "value": "Family-owned; house built in the 1930s by the Metkovic family from local stone and estate cypress; named Villa Palma by Mato Metkovic in 1966; original walls preserved in the recent renovation; now run by the third generation, 60+ years of welcoming guests",
+      "source": "site:/history-heritage",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "press_cnt": {
+      "value": "Conde Nast Traveler — “My favorite Airbnb: A Dreamy Croatian Villa Overlooking the Adriatic”",
+      "source": "site:home press band (links to cntraveler.com)",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "press_ad": {
+      "value": "Architectural Digest — “The Best Airbnbs in Croatia for an Adriatic Summer”",
+      "source": "site:home press band (links to architecturaldigest.com)",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "testimonial_1": {
+      "value": "“It is a very special place with very special people! Our hearts are full and we couldn't recommend this place enough!” — Sergiu, Austria",
+      "source": "site:home guest impressions",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "testimonial_2": {
+      "value": "“Thank you for everything! Because you have created this wonderful place, we had great time and joy here.” — Marijana, Pasqual, Marcus and Christiane, Germany (addressed to hosts Lucija, Sanja & Niksa)",
+      "source": "site:home guest impressions",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    },
+    "socials": {
+      "value": "instagram.com/molontaestate · facebook.com/profile.php?id=61570588708381",
+      "source": "site:footer",
+      "seen": "2026-08-24",
+      "confidence": "confirmed"
+    }
   },
   "conflicts": [
-    { "field": "estate_size", "site": "4.8 ha / 11 acres / 48,000 m2 (home, history)", "site_faq": "5 hectares ('5 hectars', /faq q2)", "site_gallery_meta": "4.5 hectares (11 acres) (gallery page description)", "on_page": "site", "question": "The size appears as 4.8, 5 and 4.5 ha on different pages — 4.8 ha (11 acres) is used on the new page as the best-supported figure. Correct?" },
-    { "field": "house_age", "site": "built in the 1930s (/history-heritage body)", "site_intro": "roots date back to the early 18th century (/history-heritage intro); 'built in the early 20th century' (/faq)", "on_page": "site", "question": "The new page says the house was built in the 1930s with olive trees planted 250+ years ago — is that the framing you want?" }
+    {
+      "field": "estate_size",
+      "site": "4.8 ha / 11 acres / 48,000 m2 (home, history)",
+      "site_faq": "5 hectares ('5 hectars', /faq q2)",
+      "site_gallery_meta": "4.5 hectares (11 acres) (gallery page description)",
+      "on_page": "site",
+      "question": "The size appears as 4.8, 5 and 4.5 ha on different pages — 4.8 ha (11 acres) is used on the new page as the best-supported figure. Correct?"
+    },
+    {
+      "field": "house_age",
+      "site": "built in the 1930s (/history-heritage body)",
+      "site_intro": "roots date back to the early 18th century (/history-heritage intro); 'built in the early 20th century' (/faq)",
+      "on_page": "site",
+      "question": "The new page says the house was built in the 1930s with olive trees planted 250+ years ago — is that the framing you want?"
+    }
   ],
   "gaps": [
     "Bedroom and bathroom count is stated nowhere on the homepage, FAQ, Experience, Gallery, History or Booking pages (third-party listings say 4 bedrooms / 4 baths — not used, unverified).",
     "No logo file found anywhere on the site — the wordmark is plain set type.",
-    "Brand palette and body typeface could not be read (Wix CSS unreachable from this environment) — palette on the new page is derived from the estate's own photography and named as such.",
-    "Instagram profile not readable from this environment — tone and photos taken from the site only.",
     "The estate's own brochure PDF was not parsed this run — worth mining for the change round."
   ],
   "questions": [
@@ -59,15 +232,66 @@
     "The Google listing URL still carries the old Villa Palma name — want the new site's map link pointed at a renamed listing?"
   ],
   "photos": [
-    { "file": "https://static.wixstatic.com/media/a64e37_ce38f4cfd4a34c7c8343c43d11f5e622~mv2.jpg/v1/fill/w_731,h_464,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a64e37_ce38f4cfd4a34c7c8343c43d11f5e622~mv2.jpg", "source": "site:home hero (molunat427.jpg)", "theirs": true, "cleared": false },
-    { "file": "https://static.wixstatic.com/media/a64e37_13e33cf7a09f4a1088b750cd2f19b458~mv2.jpg/v1/fill/w_980,h_653,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/a64e37_13e33cf7a09f4a1088b750cd2f19b458~mv2.jpg", "source": "site:/booking hero (molunat390.jpg)", "theirs": true, "cleared": false },
-    { "file": "https://static.wixstatic.com/media/caa724_610c91a73e4447fc86ec543654b9ca0d~mv2.jpeg/v1/fill/w_323,h_215,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/caa724_610c91a73e4447fc86ec543654b9ca0d~mv2.jpeg", "source": "site:/gallery (Pool & terraces cover)", "theirs": true, "cleared": false },
-    { "file": "https://static.wixstatic.com/media/caa724_9c3b829558644762a9cecffa8a13d5ce~mv2.jpeg/v1/fill/w_316,h_142,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/caa724_9c3b829558644762a9cecffa8a13d5ce~mv2.jpeg", "source": "site:/gallery (Estate & sea access cover)", "theirs": true, "cleared": false },
-    { "file": "https://static.wixstatic.com/media/caa724_2d23151f326944b4b7e7ef891d95636b~mv2.jpg/v1/fill/w_313,h_176,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/caa724_2d23151f326944b4b7e7ef891d95636b~mv2.jpg", "source": "site:/gallery (Interiors cover)", "theirs": true, "cleared": false },
-    { "file": "https://static.wixstatic.com/media/a64e37_df0749b5a054413fa63377b4363a51b9~mv2.jpg/v1/fill/w_309,h_174,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Jeanneau%20Prestige%2034%20resize.jpg", "source": "site:/experience (yacht)", "theirs": true, "cleared": false },
-    { "file": "https://static.wixstatic.com/media/a64e37_c85c5d890c49471fb54a644190bbfa27~mv2.jpg/v1/fill/w_309,h_174,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/A5035.jpg", "source": "site:/experience (private beach)", "theirs": true, "cleared": false },
-    { "file": "https://static.wixstatic.com/media/caa724_8afd80ceeab3401a9e4f4a9019cf91d5~mv2.jpg/v1/fill/w_309,h_174,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/AL%20Fresco%20dining%20%26%20outdoor%20kitchen.jpg", "source": "site:/experience (al fresco dining)", "theirs": true, "cleared": false },
-    { "file": "https://static.wixstatic.com/media/caa724_40af29631a324b77930b40600712dcdb~mv2.jpg/v1/fill/w_357,h_311,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/006DBD86-2B2D-475A-9CFD-97451BF498F6.jpg", "source": "site:home (Flavours of Molonta)", "theirs": true, "cleared": false }
+    {
+      "file": "https://static.wixstatic.com/media/a64e37_ce38f4cfd4a34c7c8343c43d11f5e622~mv2.jpg/v1/fill/w_731,h_464,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a64e37_ce38f4cfd4a34c7c8343c43d11f5e622~mv2.jpg",
+      "source": "site:home hero (molunat427.jpg)",
+      "theirs": true,
+      "cleared": false
+    },
+    {
+      "file": "https://static.wixstatic.com/media/a64e37_13e33cf7a09f4a1088b750cd2f19b458~mv2.jpg/v1/fill/w_980,h_653,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/a64e37_13e33cf7a09f4a1088b750cd2f19b458~mv2.jpg",
+      "source": "site:/booking hero (molunat390.jpg)",
+      "theirs": true,
+      "cleared": false
+    },
+    {
+      "file": "https://static.wixstatic.com/media/caa724_610c91a73e4447fc86ec543654b9ca0d~mv2.jpeg/v1/fill/w_323,h_215,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/caa724_610c91a73e4447fc86ec543654b9ca0d~mv2.jpeg",
+      "source": "site:/gallery (Pool & terraces cover)",
+      "theirs": true,
+      "cleared": false
+    },
+    {
+      "file": "https://static.wixstatic.com/media/caa724_9c3b829558644762a9cecffa8a13d5ce~mv2.jpeg/v1/fill/w_316,h_142,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/caa724_9c3b829558644762a9cecffa8a13d5ce~mv2.jpeg",
+      "source": "site:/gallery (Estate & sea access cover)",
+      "theirs": true,
+      "cleared": false
+    },
+    {
+      "file": "https://static.wixstatic.com/media/caa724_2d23151f326944b4b7e7ef891d95636b~mv2.jpg/v1/fill/w_313,h_176,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/caa724_2d23151f326944b4b7e7ef891d95636b~mv2.jpg",
+      "source": "site:/gallery (Interiors cover)",
+      "theirs": true,
+      "cleared": false
+    },
+    {
+      "file": "https://static.wixstatic.com/media/a64e37_df0749b5a054413fa63377b4363a51b9~mv2.jpg/v1/fill/w_309,h_174,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Jeanneau%20Prestige%2034%20resize.jpg",
+      "source": "site:/experience (yacht)",
+      "theirs": true,
+      "cleared": false
+    },
+    {
+      "file": "https://static.wixstatic.com/media/a64e37_c85c5d890c49471fb54a644190bbfa27~mv2.jpg/v1/fill/w_309,h_174,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/A5035.jpg",
+      "source": "site:/experience (private beach)",
+      "theirs": true,
+      "cleared": false
+    },
+    {
+      "file": "https://static.wixstatic.com/media/caa724_8afd80ceeab3401a9e4f4a9019cf91d5~mv2.jpg/v1/fill/w_309,h_174,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/AL%20Fresco%20dining%20%26%20outdoor%20kitchen.jpg",
+      "source": "site:/experience (al fresco dining)",
+      "theirs": true,
+      "cleared": false
+    },
+    {
+      "file": "https://static.wixstatic.com/media/caa724_40af29631a324b77930b40600712dcdb~mv2.jpg/v1/fill/w_357,h_311,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/006DBD86-2B2D-475A-9CFD-97451BF498F6.jpg",
+      "source": "site:home (Flavours of Molonta)",
+      "theirs": true,
+      "cleared": false
+    }
   ],
-  "skeleton": { "choice": "A (Tabbed)", "reason": "By the picking rule this is B (single service, no timetable; simpler than C even though the primary action is a booking enquiry) — but B is shape-only, so per house-style.md the run defaults to the fully specified A, with the estate's four faces (Estate / Sea / Table / Rates) as the tab panels. Noting per the skill: B would have fitted better — that note is the trigger for specifying B." }
+  "skeleton": {
+    "choice": "A (Tabbed)",
+    "reason": "By the picking rule this is B (single service, no timetable; simpler than C even though the primary action is a booking enquiry) — but B is shape-only, so per house-style.md the run defaults to the fully specified A, with the estate's four faces (Estate / Sea / Table / Rates) as the tab panels. Noting per the skill: B would have fitted better — that note is the trigger for specifying B."
+  },
+  "notes": [
+    "Instagram confirmed active: @molontaestate, location tag Molunat, Dubrovačko-Neretvanska (screenshot 2026-08-24). IG voice is calm and poetic ('Sit with the sea and let your mind go quiet') — page copy already sits in that register. A real wordmark/avatar exists on IG; the source logo file is still worth requesting."
+  ]
 }

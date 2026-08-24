@@ -11,13 +11,14 @@
   <style>
     /* ── Tokens: the estate's own materials — stone, plaster, cypress, terracotta ── */
     :root{
-      --bg:#f4eee1;        /* sun-bleached stone     */
-      --ink:#22271f;       /* cypress-dark           */
+      --bg:#ffffff;        /* white — the page       */
+      --ink:#3d2b1f;       /* walnut brown           */
       --accent:#b0512c;    /* terracotta             */
-      --panel:#fdfbf5;     /* lime-plaster white     */
-      --deep:#142320;      /* the bay after dark     */
-      --cream:#f2ecdd;
-      --olive:#6b7040; --adriatic:#1d5f6e; --citrus:#c07a1f; --terra:#b0512c;
+      --panel:#f7f1e6;     /* their cream (IG mark)  */
+      --deep:#2c2016;      /* espresso               */
+      --cream:#f4ecdf;
+      --brown-soft:#8a6a4f;
+      --olive:#63492e; --adriatic:#7a5230; --citrus:#8a5a33; --terra:#b0512c;
       --display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
       --body:"Inter",system-ui,-apple-system,sans-serif;
     }
@@ -58,16 +59,16 @@
     .hero h1{margin:0}
     .hero .estate-line{font-family:var(--display);font-weight:600;letter-spacing:.34em;
       text-transform:uppercase;font-size:clamp(.95rem,2.6vw,1.25rem);margin:2px 0 22px;
-      color:#cbb98f}
-    .hero p.lede{font-size:clamp(1.05rem,2.3vw,1.25rem);color:var(--cream)}
+      color:var(--brown-soft)}
+    .hero p.lede{font-size:clamp(1.05rem,2.3vw,1.25rem)}
     .hero .actions{margin-top:26px;display:flex;gap:18px;flex-wrap:wrap;align-items:center}
-    .hero .tel{font:600 17px/1 var(--body);color:var(--cream);text-decoration:none;
+    .hero .tel{font:600 17px/1 var(--body);color:var(--ink);text-decoration:none;
       border-bottom:2px solid var(--accent);padding-bottom:4px}
     .hero .direct{margin-top:18px;font-size:13.5px;letter-spacing:.06em;
-      text-transform:uppercase;color:#cbb98f}
+      text-transform:uppercase;color:var(--brown-soft)}
     /* Arrival card — the hero aside (no timetable in the brief, so the season sheet sits here) */
     .arrival{background:var(--panel);color:var(--ink);padding:26px;position:relative;
-      border:1px solid rgba(0,0,0,.12)}
+      border:1px solid rgba(61,43,31,.18)}
     .arrival .tag{position:absolute;top:0;right:0;background:var(--deep);color:#fff;
       font:700 10px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;padding:6px 9px}
     .arrival dl{margin:0;display:grid;grid-template-columns:1fr auto;gap:10px 14px;font-size:15px}
@@ -76,14 +77,14 @@
     .arrival .foot{margin:16px 0 0;font-size:13px;opacity:.8}
 
     /* ── Facts strip ── */
-    .facts{padding:0 20px;background:var(--deep)}
-    .facts .wrap{display:grid;gap:2px;background:rgba(242,236,221,.22);
+    .facts{padding:0 20px;background:var(--panel)}
+    .facts .wrap{display:grid;gap:2px;background:rgba(61,43,31,.22);
       grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr))}
-    .facts .cell{background:var(--deep);padding:20px 16px}
+    .facts .cell{background:var(--panel);padding:20px 16px}
     .facts b{display:block;font:600 10.5px/1 var(--body);letter-spacing:.2em;
-      text-transform:uppercase;color:#cbb98f;margin-bottom:9px}
-    .facts span{font-family:var(--display);font-weight:600;font-size:21px;color:var(--cream)}
-    .facts a{color:var(--cream);text-decoration:none;border-bottom:1.5px solid var(--accent)}
+      text-transform:uppercase;color:var(--accent);margin-bottom:9px}
+    .facts span{font-family:var(--display);font-weight:600;font-size:21px;color:var(--ink)}
+    .facts a{color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--accent)}
 
     /* ── Tabs: radio-driven, no JS ── */
     .tabs input{position:absolute;opacity:0;pointer-events:none}
@@ -91,7 +92,7 @@
     .tabbar label{font:600 13.5px/1 var(--body);letter-spacing:.09em;text-transform:uppercase;
       padding:14px 20px 12px;background:var(--panel);cursor:pointer;
       border-top:4px solid var(--tc,var(--accent));user-select:none}
-    .tabbar label:hover{background:#fff}
+    .tabbar label:hover{background:#efe6d5}
     .panel{display:none;background:var(--panel);padding:34px 26px;
       border-top:4px solid var(--tc,var(--accent))}
     #t-estate:checked ~ .panel-estate,#t-sea:checked ~ .panel-sea,
@@ -182,7 +183,7 @@
   <a href="/offer/">The offer</a>
 </nav>
 
-<header class="hero band-deep">
+<header class="hero">
   <div class="wrap">
     <div>
       <p class="kicker">Western bay of Molunat &middot; near Dubrovnik &middot; Croatia</p>
@@ -370,7 +371,7 @@
   </div>
 </section>
 
-<section class="find band-deep" id="find-us">
+<section class="find" id="find-us">
   <div class="wrap">
     <div>
       <p class="kicker">Find us</p>
