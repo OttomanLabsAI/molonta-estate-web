@@ -83,3 +83,4 @@ must keep tracing to the brief: no invented prices, dates, or claims, ever.
 | --- | --- | --- |
 | v1.0 | The Molonta pitch demo, complete | New one-page site for the estate, their current site framed beside it, and the offer — verified 320→1920 and kept out of search indexes. |
 | v1.1 | Dressed in the estate's own colours | The whole demo moves to the brand's Instagram identity — brown serif on white with cream panels — with the type confirmed against their own posts. |
+| v1.2 | Softer, and all one colour | The brown lightens to caramel and the terracotta leaves entirely — the demo now reads as a single quiet colour on white. |

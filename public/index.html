@@ -12,13 +12,13 @@
     /* ── Tokens: the estate's own materials — stone, plaster, cypress, terracotta ── */
     :root{
       --bg:#ffffff;        /* white — the page       */
-      --ink:#3d2b1f;       /* walnut brown           */
-      --accent:#b0512c;    /* terracotta             */
+      --ink:#85654a;       /* light caramel brown    */
+      --accent:#6f5137;    /* deep caramel           */
       --panel:#f7f1e6;     /* their cream (IG mark)  */
       --deep:#2c2016;      /* espresso               */
       --cream:#f4ecdf;
-      --brown-soft:#8a6a4f;
-      --olive:#63492e; --adriatic:#7a5230; --citrus:#8a5a33; --terra:#b0512c;
+      --brown-soft:#8f6b4d;
+      --olive:#8a6a4f; --adriatic:#7d5c40; --citrus:#6f5137; --terra:#5c4227;
       --display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
       --body:"Inter",system-ui,-apple-system,sans-serif;
     }
@@ -37,7 +37,7 @@
     p{max-width:65ch;margin:0 0 1em}
     .kicker{font:600 11.5px/1.4 var(--body);letter-spacing:.22em;text-transform:uppercase;
       color:var(--accent);margin:0 0 14px}
-    .band-deep .kicker{color:#d98d5f}
+    .band-deep .kicker{color:#d9c3a6}
 
     section{padding:64px 20px}
     .wrap{max-width:1080px;margin:0 auto}
@@ -47,7 +47,7 @@
     .btn{display:inline-block;background:var(--accent);color:#fff;
       font:600 15px/1 var(--body);letter-spacing:.05em;text-transform:uppercase;
       padding:16px 28px;text-decoration:none;border:0}
-    .btn:hover{background:#94421f}
+    .btn:hover{background:#5c4227}
     .quiet{font-size:14px;opacity:.85}
     .plain{color:inherit;text-decoration:underline;text-decoration-color:var(--accent);
       text-underline-offset:3px}
@@ -74,7 +74,7 @@
     .arrival dl{margin:0;display:grid;grid-template-columns:1fr auto;gap:10px 14px;font-size:15px}
     .arrival dt{font-weight:600}
     .arrival dd{margin:0;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-    .arrival .foot{margin:16px 0 0;font-size:13px;opacity:.8}
+    .arrival .foot{margin:16px 0 0;font-size:13px}
 
     /* ── Facts strip ── */
     .facts{padding:0 20px;background:var(--panel)}
@@ -117,7 +117,7 @@
     .rates td{padding:15px 16px;border:1px solid rgba(0,0,0,.14);font-size:15px;vertical-align:middle}
     .rates td:last-child{text-align:right;font-family:var(--display);font-weight:700;
       font-size:21px;white-space:nowrap}
-    .rates small{display:block;font:500 12.5px/1.4 var(--body);opacity:.75;margin-top:2px}
+    .rates small{display:block;font:500 12.5px/1.4 var(--body);margin-top:2px}
     /* Under 600px the tabs become stacked sections */
     @media (max-width:599px){
       .tabbar{display:none}
@@ -135,7 +135,7 @@
     blockquote{margin:0;font-family:var(--display);font-size:clamp(1.15rem,2.6vw,1.5rem);
       line-height:1.35;max-width:34ch}
     blockquote footer{font:600 12px/1.4 var(--body);letter-spacing:.14em;
-      text-transform:uppercase;margin-top:12px;opacity:.8}
+      text-transform:uppercase;margin-top:12px}
 
     /* ── Find us ── */
     .find .wrap{display:grid;gap:36px;align-items:start;

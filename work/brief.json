@@ -7,13 +7,13 @@
     "colors": {
       "value": [
         "#ffffff (white ground)",
-        "#3d2b1f (walnut ink)",
-        "#f7f1e6 (cream panel — their IG mark's ground)",
+        "#85654a (light caramel ink)",
+        "#f7f1e6 (cream panel)",
         "#2c2016 (espresso band)",
-        "#b0512c (terracotta accent)",
-        "#63492e / #7a5230 / #8a5a33 / #b0512c (tonal brown tab ramp)"
+        "#6f5137 (deep caramel accent — buttons/underlines)",
+        "#8a6a4f→#5c4227 (tonal brown tab ramp)"
       ],
-      "source": "Client direction (Fid, 2026-08-24: white background, brown text) + the estate's Instagram identity — brown MOLONTA serif wordmark on a cream ground (@molontaestate avatar and video watermark, screenshot 2026-08-24)",
+      "source": "Client direction (Fid, 2026-08-24: much lighter brown, no orange) + the estate's Instagram mark — brown serif wordmark on cream (@molontaestate, screenshot 2026-08-24)",
       "confirmed": true
     },
     "display_font": {
