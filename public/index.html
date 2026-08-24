@@ -60,7 +60,7 @@
       display:flex;flex-direction:column;padding:0 20px;overflow:hidden}
     .hero .bg,.hero .veil{position:absolute;inset:0}
     .hero .bg{object-fit:cover;width:100%;height:100%;background:var(--ph)}
-    .hero .veil{background:rgba(247,241,230,.87)}
+    .hero .veil{background:rgba(255,255,255,.88)}
     .hero > div{position:relative}
     .hero .top{display:flex;justify-content:space-between;align-items:center;gap:14px;
       flex-wrap:wrap;padding:22px 0;max-width:1120px;margin:0 auto;width:100%}
@@ -82,10 +82,11 @@
     .scroll-cue:after{content:"";width:1px;height:34px;background:var(--brown-soft)}
 
     /* ── Facts strip ── */
-    .facts{padding:0 20px;background:var(--panel)}
+    .facts{padding:0 20px;background:var(--bg)}
     .facts .wrap{display:grid;gap:2px;background:rgba(61,43,31,.22);
+      border:1px solid rgba(61,43,31,.22);
       grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr))}
-    .facts .cell{background:var(--panel);padding:20px 16px}
+    .facts .cell{background:var(--bg);padding:20px 16px}
     .facts b{display:block;font:600 10.5px/1 var(--body);letter-spacing:.2em;
       text-transform:uppercase;color:var(--accent);margin-bottom:9px}
     .facts span{font-family:var(--display);font-weight:600;font-size:21px;color:var(--ink)}
@@ -97,7 +98,7 @@
     .index a{display:flex;align-items:baseline;gap:22px;flex-wrap:wrap;
       padding:26px 6px;text-decoration:none;border-bottom:1px solid rgba(61,43,31,.22);
       transition:background .2s}
-    .index a:hover{background:var(--panel)}
+    .index a:hover{background:#f8f4ed}
     .index .num{font:600 13px/1 var(--body);letter-spacing:.14em;color:var(--accent);
       min-width:34px}
     .index .name{font-family:var(--display);font-weight:600;
@@ -108,6 +109,7 @@
     .index a:hover .arrow{transform:translateX(6px)}
 
     /* ── Feature sections: text beside imagery, alternating ── */
+    .feat,.family{border-top:1px solid rgba(61,43,31,.14)}
     .feat .wrap{display:grid;gap:52px;align-items:center;
       grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
     .feat.flip .media{order:-1}
@@ -127,7 +129,8 @@
     .feat .act{margin-top:30px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
 
     /* ── Ticker ── */
-    .ticker{padding:26px 0;background:var(--panel);overflow:hidden}
+    .ticker{padding:26px 0;background:var(--bg);overflow:hidden;
+      border-top:1px solid rgba(61,43,31,.14);border-bottom:1px solid rgba(61,43,31,.14)}
     .ticker .track{display:flex;gap:54px;white-space:nowrap;width:max-content;
       animation:tick 30s linear infinite}
     .ticker span{font-family:var(--display);font-weight:600;letter-spacing:.3em;
@@ -268,7 +271,7 @@
   </div>
 </section>
 
-<section class="feat band-panel" id="estate">
+<section class="feat" id="estate">
   <div class="wrap">
     <div>
       <p class="kicker">01 &middot; The estate</p>
@@ -319,7 +322,7 @@
   </div>
 </section>
 
-<section class="feat band-panel" id="table">
+<section class="feat" id="table">
   <div class="wrap">
     <div>
       <p class="kicker">03 &middot; The table</p>
@@ -377,7 +380,7 @@
   </div>
 </section>
 
-<section class="family band-panel" id="family">
+<section class="family" id="family">
   <div class="wrap">
     <p class="kicker">Seen, said &amp; printed</p>
     <h2>Hosted by the family that built it</h2>
