@@ -100,14 +100,19 @@
     .hero .scrim{position:absolute;inset:0;
       background:linear-gradient(rgba(43,36,20,.34),rgba(43,36,20,.52))}
     .hero > .in{position:relative}
-    .sprig{width:34px;height:34px;margin-bottom:18px;color:#fff}
-    /* The lockup, as their brochure sets it: HERITAGE ESTATE threaded through the wordmark */
-    .lockup{position:relative;display:inline-block}
-    .lockup h1{margin:0;color:#f3ead6}
+    .sprig{display:block;width:34px;height:34px;margin:0 auto 18px;color:#fff}
+    /* The lockup, as their brochure sets it: HERITAGE ESTATE threaded through the
+       wordmark — a clear stripe cut from the letters, the photo showing through */
+    .lockup{position:relative;display:inline-block;--gap:clamp(28px,3vw,38px)}
+    .lockup h1{margin:0;color:#f3ead6;
+      -webkit-mask-image:linear-gradient(180deg,#000 calc(52% - var(--gap)/2),
+        transparent 0,transparent calc(52% + var(--gap)/2),#000 0);
+      mask-image:linear-gradient(180deg,#000 calc(52% - var(--gap)/2),
+        transparent 0,transparent calc(52% + var(--gap)/2),#000 0)}
     .estate-line{position:absolute;top:52%;left:50%;transform:translate(-50%,-50%);
-      background:var(--bg);padding:4px 16px;margin:0;white-space:nowrap;
+      padding:3px 16px;margin:0;white-space:nowrap;
       font-family:var(--display);font-weight:600;letter-spacing:.4em;
-      text-transform:uppercase;font-size:clamp(.72rem,2.2vw,1.05rem);color:var(--accent)}
+      text-transform:uppercase;font-size:clamp(.72rem,2.2vw,1.05rem);color:#f3ead6}
     .since{font:600 11px/1.5 var(--body);letter-spacing:.3em;text-transform:uppercase;
       color:#f3ead6;margin:20px 0 24px}
     .hero .kicker{color:#f3ead6;margin-bottom:18px}
