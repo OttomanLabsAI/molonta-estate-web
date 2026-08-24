@@ -7,13 +7,12 @@
     "colors": {
       "value": [
         "#ffffff (white ground)",
-        "#82725c (dark beige — body text)",
-        "#9c8b71 (sand — display type)",
-        "#6e5d45 (deep sand — buttons/accents)",
-        "#453b2d (dark taupe bands)",
-        "#f4ecdf (cream text on taupe)"
+        "#a08a56 (the Guide's olive-gold — display)",
+        "#7a6a45 (deep olive-gold — body)",
+        "#6b5c3b (darkest gold — actions)",
+        "#826f44 (the Guide's band, tuned to AA with white text)"
       ],
-      "source": "Client direction (Fid, 2026-08-24: white background; not brown — beige) + the estate's Instagram mark (@molontaestate)",
+      "source": "The estate's own Guest Guide brochure (uploaded 2026-08-24; same file linked from every page of their site) + client direction: white ground",
       "confirmed": true
     },
     "display_font": {
@@ -30,10 +29,9 @@
       "confidence": "unconfirmed"
     },
     "logo": {
-      "value": "none found — wordmark is set type: MOLONTA HERITAGE ESTATE, uppercase",
-      "source": "site:header",
-      "seen": "2026-08-24",
-      "confidence": "confirmed"
+      "value": "Real lockup: MOLONTA with HERITAGE ESTATE threaded through the wordmark; 'AUTHENTIC MEDITERRANEAN / SINCE 1800' beneath; olive-branch line motifs",
+      "source": "guest guide brochure (work/guest-guide.pdf; their own PDF linked from every site page; uploaded by client 2026-08-24)",
+      "confirmed": true
     },
     "tone": {
       "value": "serene, unhurried, family-heritage, understated luxury; the estate's own line: “the Mediterranean as it once was”; strapline “Book Direct. Experience more.”",
@@ -198,6 +196,61 @@
       "source": "site:footer",
       "seen": "2026-08-24",
       "confidence": "confirmed"
+    },
+    "brand_line": {
+      "value": "'Authentic Mediterranean · Since 1800'; logo lockup threads HERITAGE ESTATE through the MOLONTA wordmark; olive-branch motifs; olive-gold band with white serif",
+      "source": "guest guide brochure (work/guest-guide.pdf; their own PDF linked from every site page; uploaded by client 2026-08-24)",
+      "seen": "2026-08-24"
+    },
+    "history_origins": {
+      "value": "Roots reach back to the early 18th century; house built in the 1930s by three brothers and two sisters from local stone; lime burned in kilns near the beach (some still standing); cypress roof beams cut on the estate; folklore: fifty cypress trees planted at a son's birth; no electricity — horses, mules, donkeys; eldest brother emigrated to Argentina to finance construction",
+      "source": "site:/history-heritage",
+      "seen": "2026-08-24"
+    },
+    "history_life": {
+      "value": "Upper floor was the family home; ground-floor cellars stored wine, olive oil, dried figs and carob; property is 48,000 m² (settles the size conflict at 4.8 ha / 11 acres)",
+      "source": "site:/history-heritage",
+      "seen": "2026-08-24"
+    },
+    "history_villa_palma": {
+      "value": "1966: Mato Metković, back from America, made it a holiday home named Villa Palma; latest renovation kept the original exterior walls against architects' advice — 'You preserved the soul of the house.' (quote shown unattributed on their page)",
+      "source": "site:/history-heritage",
+      "seen": "2026-08-24"
+    },
+    "history_today": {
+      "value": "60+ years of welcoming guests; run by the third generation; western bay of Molunat is one of the few remaining undeveloped bays on the mainland Adriatic; carob among estate produce",
+      "source": "site:/history-heritage",
+      "seen": "2026-08-24"
+    },
+    "location_detail": {
+      "value": "Molunat, Konavle; 40 min from Dubrovnik Old Town; boat transfer from Dubrovnik on request; on-site private parking; untouched bay, no mass tourism",
+      "source": "site:/location",
+      "seen": "2026-08-24"
+    },
+    "experience_extra": {
+      "value": "Beach has sunchairs and sun-warmed stone platforms; yacht trips reach hidden caves; fresh fish from local fishermen for the grill; Dubrovnik by sea docks at the Old Town port",
+      "source": "site:/experience + /faq q15",
+      "seen": "2026-08-24"
+    },
+    "provisioning": {
+      "value": "Grocery stocking before arrival, food delivery to the villa, fully catered dining; all-inclusive packages may include private chef, wellness day, and a full-day yacht excursion to Dubrovnik with a private guided tour; limited groups per season, weekly model in summer; car hire not recommended in high season; restaurants ~15 min drive + konoba 500 m",
+      "source": "site:/faq",
+      "seen": "2026-08-24"
+    },
+    "guide_in_villa": {
+      "value": "Chef from €400; catering from €60/pax; sommelier & signature cocktails on request; massage from €100 (min 2 h); yoga from €170; hair & make-up from €300 (min 2 persons); babysitter from €50; laundry €40/h; private transfers on request (Mercedes E — 4, V — 7); car hire on request; Jeanneau Prestige 34 from €1,500; live sax from €500; private folklore show from €500",
+      "source": "guest guide brochure (work/guest-guide.pdf; their own PDF linked from every site page; uploaded by client 2026-08-24)",
+      "seen": "2026-08-24"
+    },
+    "guide_recreation": {
+      "value": "Horse riding Konavle from €120; Molunat water sports: kayak €30, SUP €30, jet ski €80, boat €50; scuba from €100; big game fishing on request; karting Herceg Novi (MNE) from €20; buggy safari Konavle & ATV quad on request; silk visit €200 (1–1.5 h with snack) / embroidery workshop €400 (2 h); zipline €50 pp; sky bike €40 pp; Konavle immersion from €500 (min 2, incl guide/chauffeur/admissions/tasting); wine tour on request; Dubrovnik experience from €850 (min 2, incl); Montenegro tour from €650 (min 2, incl)",
+      "source": "guest guide brochure (work/guest-guide.pdf; their own PDF linked from every site page; uploaded by client 2026-08-24)",
+      "seen": "2026-08-24"
+    },
+    "guide_dining": {
+      "value": "Molunat: Lancana, Monika, Odgusta Grill & Pizza · Konavle: Konavoski Dvori, Vinica Monković, Koraćeva Kuća · Cavtat: Bugenvila, Villa Banac, Dolium · St. Pietro: St. Pietro Restaurant · Šipan: BOWA · Ston: Kapetanova Kuća · Dubrovnik: 360, Nautika, Proto, Ezza, Marco Polo, Restaurant Dubrovnik, Panorama, Stara Loza, Rudjer, Bota Šare, Zuzori, Forty Four · Montenegro: Fisherman's Village Club (Luštica), Pool Restaurant (Mamula Island), Conte (Perast), Adriatica (Kamenari)",
+      "source": "guest guide brochure (work/guest-guide.pdf; their own PDF linked from every site page; uploaded by client 2026-08-24)",
+      "seen": "2026-08-24"
     }
   },
   "conflicts": [
@@ -215,7 +268,10 @@
       "site_intro": "roots date back to the early 18th century (/history-heritage intro); 'built in the early 20th century' (/faq)",
       "on_page": "site",
       "question": "The new page says the house was built in the 1930s with olive trees planted 250+ years ago — is that the framing you want?"
-    }
+    },
+    "Airport time: 20 min (location page) vs 25 min (homepage, FAQ) — on_page: 25 min (majority reading).",
+    "Chef price: Guest Guide text layer holds both 'from 300 €' and 'from 400 €'; the visible card reads €400 — on_page: from €400.",
+    "Estate size RESOLVED: history page states 48,000 m² precisely — on_page: 48,000 m² / eleven acres."
   ],
   "gaps": [
     "Bedroom and bathroom count is stated nowhere on the homepage, FAQ, Experience, Gallery, History or Booking pages (third-party listings say 4 bedrooms / 4 baths — not used, unverified).",
@@ -285,6 +341,18 @@
       "source": "site:home (Flavours of Molonta)",
       "theirs": true,
       "cleared": false
+    },
+    {
+      "file": "https://static.wixstatic.com/media/caa724_da877202405845599f250d8c2d085a61~mv2.jpg",
+      "source": "site:/history-heritage (Slika 1)",
+      "theirs": true,
+      "cleared": false
+    },
+    {
+      "file": "https://static.wixstatic.com/media/caa724_42f9b74a59b7426d8eb180919b96fd99~mv2.jpg",
+      "source": "site:/gallery (Heritage Details cover)",
+      "theirs": true,
+      "cleared": false
     }
   ],
   "skeleton": {
@@ -293,6 +361,8 @@
     "client_direction": "2026-08-24: flow and layout recut to match https://7balispa.co.uk/ (client reference) — full-viewport hero, oversized index links in place of tabs, alternating image/text features, marquee ribbon, big closing band, contact folded into the footer."
   },
   "notes": [
-    "Instagram confirmed active: @molontaestate, location tag Molunat, Dubrovačko-Neretvanska (screenshot 2026-08-24). IG voice is calm and poetic ('Sit with the sea and let your mind go quiet') — page copy already sits in that register. A real wordmark/avatar exists on IG; the source logo file is still worth requesting."
+    "Instagram confirmed active: @molontaestate, location tag Molunat, Dubrovačko-Neretvanska (screenshot 2026-08-24). IG voice is calm and poetic ('Sit with the sea and let your mind go quiet') — page copy already sits in that register. A real wordmark/avatar exists on IG; the source logo file is still worth requesting.",
+    "Guest Guide back page carries Croatian emergency numbers and a personal gmail bookings contact — both deliberately left off the marketing one-pager (in-stay content; public contact is info@). Flag to client.",
+    "Guide's own typos not reproduced ('SIGNITURE COCKTAILS', 'FISHERSMAN VILLAGE'); names normalised."
   ]
 }

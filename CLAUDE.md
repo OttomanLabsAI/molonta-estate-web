@@ -87,3 +87,4 @@ must keep tracing to the brief: no invented prices, dates, or claims, ever.
 | v1.3 | The estate as one long story | The page becomes a cinematic scroll — a full-screen opening on the bay, four oversized ways in, and the estate unfolding section by section to a quiet close. |
 | v1.4 | White, all the way down | Every ground on the page turns white — the cream panels go, and fine brown hairlines now carry the rhythm from the opening to the espresso close. |
 | v1.5 | From brown to beige | The palette softens into sand — beige display type, a darker beige for reading, and the page's two dark anchors greyed off into taupe. |
+| v1.6 | The Guest Guide, made a website | The estate's own brochure sets the brand — its gold, its nested wordmark, its olive branches — and every fact from the Guide and the whole site now lives on the page: the family's story since 1800, all services and prices, and the tables they trust. |

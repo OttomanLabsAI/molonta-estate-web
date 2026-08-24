@@ -9,17 +9,15 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="fonts/fonts.css">
   <style>
-    /* ── Tokens: white ground, one quiet colour ── */
+    /* ── Tokens: the Guest Guide's system — olive-gold on white ── */
     :root{
-      --bg:#ffffff;        /* white — the page       */
-      --ink:#82725c;       /* dark beige — body      */
-      --accent:#6e5d45;    /* deep sand — actions    */
-      --panel:#f7f1e6;     /* their cream (IG mark)  */
-      --deep:#453b2d;      /* dark taupe             */
-      --cream:#f4ecdf;
-      --sand:#9c8b71;      /* true beige — display   */
-      --brown-soft:#82725c;
-      --ph:#e7dfcd;        /* photo placeholder      */
+      --bg:#ffffff;        /* white — the page            */
+      --ink:#7a6a45;       /* deep olive-gold — body      */
+      --accent:#6b5c3b;    /* darker gold — actions       */
+      --sand:#a08a56;      /* the Guide's gold — display  */
+      --deep:#826f44;      /* the Guide's band, tuned AA  */
+      --panel:#f7f1e6;
+      --ph:#e9e2d2;        /* photo placeholder           */
       --display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
       --body:"Inter",system-ui,-apple-system,sans-serif;
     }
@@ -39,25 +37,27 @@
     p{max-width:65ch;margin:0 0 1em}
     .kicker{font:600 11.5px/1.4 var(--body);letter-spacing:.22em;text-transform:uppercase;
       color:var(--accent);margin:0 0 14px}
-    .band-deep .kicker{color:#d9c3a6}
+    .band-deep .kicker{color:#fff}
 
     section{padding:88px 20px}
     .wrap{max-width:1120px;margin:0 auto}
-    .band-deep{background:var(--deep);color:var(--cream)}
-    .band-panel{background:var(--panel)}
+    .band-deep{background:var(--deep);color:#fff}
 
     .btn{display:inline-block;background:var(--accent);color:#fff;
       font:600 15px/1 var(--body);letter-spacing:.05em;text-transform:uppercase;
       padding:17px 30px;text-decoration:none;border:0}
-    .btn:hover{background:#5a4a33}
+    .btn:hover{background:#574a2e}
+    .band-deep .btn{background:#fff;color:var(--accent)}
+    .band-deep .btn:hover{background:#f1ead9}
     .tel{font:600 16px/1 var(--body);color:var(--ink);text-decoration:none;
       border-bottom:2px solid var(--accent);padding-bottom:4px;white-space:nowrap}
-    .band-deep .tel{color:var(--cream)}
+    .band-deep .tel{color:#fff;border-bottom-color:#fff}
     .quiet{font-size:14px}
     .plain{color:inherit;text-decoration:underline;text-decoration-color:var(--accent);
       text-underline-offset:3px}
+    .band-deep .plain{text-decoration-color:#fff}
 
-    /* ── Hero: the full first view, their bay behind a cream veil ── */
+    /* ── Hero: the full first view, their bay behind a white veil ── */
     .hero{position:relative;min-height:calc(100vh - 48px);min-height:calc(100svh - 48px);
       display:flex;flex-direction:column;padding:0 20px;overflow:hidden}
     .hero .bg,.hero .veil{position:absolute;inset:0}
@@ -70,23 +70,28 @@
     .hero .mid{flex:1;display:flex;flex-direction:column;justify-content:center;
       align-items:center;text-align:center;padding:44px 0}
     .sprig{width:34px;height:34px;margin-bottom:18px;color:var(--sand)}
-    .hero h1{margin:0}
-    .estate-line{font-family:var(--display);font-weight:600;letter-spacing:.4em;
-      text-transform:uppercase;font-size:clamp(.95rem,2.8vw,1.3rem);margin:6px 0 26px;
-      color:var(--sand)}
+    /* The lockup, as their brochure sets it: HERITAGE ESTATE threaded through the wordmark */
+    .lockup{position:relative;display:inline-block}
+    .lockup h1{margin:0}
+    .estate-line{position:absolute;top:52%;left:50%;transform:translate(-50%,-50%);
+      background:var(--bg);padding:4px 16px;margin:0;white-space:nowrap;
+      font-family:var(--display);font-weight:600;letter-spacing:.4em;
+      text-transform:uppercase;font-size:clamp(.72rem,2.2vw,1.05rem);color:var(--accent)}
+    .since{font:600 11px/1.5 var(--body);letter-spacing:.3em;text-transform:uppercase;
+      color:var(--sand);margin:20px 0 24px}
     .hero .strap{font-family:var(--display);font-size:clamp(1.2rem,3vw,1.65rem);
       line-height:1.4;max-width:34ch;margin:0 auto 30px}
     .hero .actions{display:flex;gap:22px;flex-wrap:wrap;align-items:center;justify-content:center}
     .hero .bottom{display:flex;justify-content:center;padding:26px 0 30px}
     .scroll-cue{font:600 11px/1 var(--body);letter-spacing:.26em;text-transform:uppercase;
-      color:var(--brown-soft);text-decoration:none;display:inline-flex;flex-direction:column;
+      color:var(--accent);text-decoration:none;display:inline-flex;flex-direction:column;
       align-items:center;gap:10px}
-    .scroll-cue:after{content:"";width:1px;height:34px;background:var(--brown-soft)}
+    .scroll-cue:after{content:"";width:1px;height:34px;background:var(--sand)}
 
     /* ── Facts strip ── */
     .facts{padding:0 20px;background:var(--bg)}
-    .facts .wrap{display:grid;gap:2px;background:rgba(61,43,31,.22);
-      border:1px solid rgba(61,43,31,.22);
+    .facts .wrap{display:grid;gap:2px;background:rgba(122,106,69,.28);
+      border:1px solid rgba(122,106,69,.28);
       grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr))}
     .facts .cell{background:var(--bg);padding:20px 16px}
     .facts b{display:block;font:600 10.5px/1 var(--body);letter-spacing:.2em;
@@ -94,45 +99,49 @@
     .facts span{font-family:var(--display);font-weight:600;font-size:21px;color:var(--ink)}
     .facts a{color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--accent)}
 
-    /* ── The index: four ways in, oversized ── */
+    /* ── The index: six ways in, oversized ── */
     .ways .intro{max-width:65ch}
-    .index{margin:34px 0 0;border-top:1px solid rgba(61,43,31,.22)}
+    .index{margin:34px 0 0;border-top:1px solid rgba(122,106,69,.28)}
     .index a{display:flex;align-items:baseline;gap:22px;flex-wrap:wrap;
-      padding:26px 6px;text-decoration:none;border-bottom:1px solid rgba(61,43,31,.22);
+      padding:24px 6px;text-decoration:none;border-bottom:1px solid rgba(122,106,69,.28);
       transition:background .2s}
-    .index a:hover{background:#f8f4ed}
+    .index a:hover{background:#f8f4ea}
     .index .num{font:600 13px/1 var(--body);letter-spacing:.14em;color:var(--accent);
       min-width:34px}
     .index .name{font-family:var(--display);font-weight:600;color:var(--sand);
-      font-size:clamp(1.7rem,5.4vw,2.9rem);line-height:1.05}
-    .index .hint{font-size:14px;color:var(--brown-soft);margin-left:auto}
+      font-size:clamp(1.6rem,5vw,2.7rem);line-height:1.05}
+    .index .hint{font-size:14px;color:var(--ink);margin-left:auto}
     .index .arrow{font-family:var(--body);font-weight:600;color:var(--accent);
       transition:transform .2s}
     .index a:hover .arrow{transform:translateX(6px)}
 
     /* ── Feature sections: text beside imagery, alternating ── */
-    .feat,.family{border-top:1px solid rgba(61,43,31,.14)}
+    .feat,.family,.guide{border-top:1px solid rgba(122,106,69,.18)}
     .feat .wrap{display:grid;gap:52px;align-items:center;
       grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
     .feat.flip .media{order:-1}
     .media{position:relative}
     .media figure{margin:0;background:var(--bg)}
-    .media .ph{background:var(--ph);overflow:hidden;border:1px solid rgba(61,43,31,.16)}
+    .media .ph{background:var(--ph);overflow:hidden;border:1px solid rgba(122,106,69,.2)}
     .media .lead .ph{aspect-ratio:4/3}
     .media img{width:100%;height:100%;object-fit:cover}
     .media .over{width:62%;margin:-16% 0 0 auto;position:relative}
     .feat.flip .media .over{margin:-16% auto 0 0}
     .media .over .ph{aspect-ratio:3/2;box-shadow:0 0 0 10px var(--bg)}
     .media figcaption{font-size:12.5px;letter-spacing:.05em;padding:10px 2px 0;
-      color:var(--brown-soft)}
+      color:var(--ink)}
     .feat ul{list-style:none;margin:26px 0 0;padding:0;font-size:15.5px}
-    .feat li{padding:12px 2px;border-top:1px solid rgba(61,43,31,.18)}
-    .feat li:last-child{border-bottom:1px solid rgba(61,43,31,.18)}
+    .feat li{padding:12px 2px;border-top:1px solid rgba(122,106,69,.22)}
+    .feat li:last-child{border-bottom:1px solid rgba(122,106,69,.22)}
     .feat .act{margin-top:30px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+    .pull{margin:26px 0 0;font-family:var(--display);font-weight:600;
+      font-size:clamp(1.3rem,3vw,1.7rem);line-height:1.3;color:var(--sand);max-width:24ch}
+    .pull footer{font:600 11.5px/1.4 var(--body);letter-spacing:.18em;
+      text-transform:uppercase;margin-top:10px;color:var(--ink)}
 
     /* ── Ticker ── */
     .ticker{padding:26px 0;background:var(--bg);overflow:hidden;
-      border-top:1px solid rgba(61,43,31,.14);border-bottom:1px solid rgba(61,43,31,.14)}
+      border-top:1px solid rgba(122,106,69,.18);border-bottom:1px solid rgba(122,106,69,.18)}
     .ticker .track{display:flex;gap:54px;white-space:nowrap;width:max-content;
       animation:tick 30s linear infinite}
     .ticker span{font-family:var(--display);font-weight:600;letter-spacing:.3em;
@@ -140,9 +149,25 @@
     @keyframes tick{to{transform:translateX(-50%)}}
     @media (prefers-reduced-motion:reduce){.ticker .track{animation:none}}
 
+    /* ── The Guest Guide: menu lists in the brochure's manner ── */
+    .guide .groups{display:grid;gap:52px;margin-top:14px;
+      grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
+    .menu{list-style:none;margin:16px 0 0;padding:0;font-size:15px}
+    .menu li{display:flex;align-items:baseline;gap:8px;padding:9px 2px;flex-wrap:wrap}
+    .menu .n{min-width:0}
+    .menu .n small{display:block;font-size:12.5px;letter-spacing:.02em;margin-top:2px}
+    .menu .dots{flex:1 1 24px;border-bottom:1px dotted rgba(122,106,69,.5);
+      transform:translateY(-4px)}
+    .menu .p{white-space:nowrap;font-weight:600;font-variant-numeric:tabular-nums}
+    .places{margin:16px 0 0;font-size:15px}
+    .places p{margin:0 0 12px;max-width:none}
+    .places b{font:600 11.5px/1.6 var(--body);letter-spacing:.14em;text-transform:uppercase;
+      color:var(--accent);display:block}
+    .guide .note{margin-top:34px;font-size:13.5px;max-width:70ch}
+
     /* ── Rates ── */
     .rates{width:100%;border-collapse:collapse;background:var(--bg);margin:26px 0 0}
-    .rates td{padding:16px;border:1px solid rgba(61,43,31,.2);font-size:15px;vertical-align:middle}
+    .rates td{padding:16px;border:1px solid rgba(122,106,69,.3);font-size:15px;vertical-align:middle}
     .rates td:last-child{text-align:right;font-family:var(--display);font-weight:700;
       font-size:21px;white-space:nowrap}
     .rates small{display:block;font:500 12.5px/1.4 var(--body);margin-top:2px}
@@ -157,7 +182,7 @@
       text-transform:uppercase;margin-top:12px}
     .press{display:grid;gap:18px;margin:44px 0 0;
       grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
-    .press article{background:var(--bg);border:1px solid rgba(61,43,31,.16);
+    .press article{background:var(--bg);border:1px solid rgba(122,106,69,.2);
       padding:22px;position:relative}
     .press .tag{position:absolute;top:0;right:0;background:var(--deep);color:#fff;
       font:700 10px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;padding:6px 9px}
@@ -165,12 +190,15 @@
     .press p{font-size:14.5px;margin:0}
 
     /* ── Close ── */
-    .close{text-align:center;padding:110px 20px}
+    .close{text-align:center;padding:110px 20px;position:relative;overflow:hidden}
+    .close .branch{position:absolute;right:-30px;top:-30px;width:280px;height:280px;
+      color:rgba(255,255,255,.22)}
+    .close .wrap{position:relative}
     .close h2{margin:0 auto .5em}
     .close p{margin:0 auto 32px}
     .close .actions{display:flex;gap:22px;justify-content:center;align-items:center;flex-wrap:wrap}
 
-    footer.site{background:var(--deep);color:var(--cream);padding:64px 20px 42px}
+    footer.site{background:var(--deep);color:#fff;padding:64px 20px 42px}
     footer.site .wrap{display:grid;gap:44px;
       grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr))}
     footer.site .mark{font-family:var(--display);font-weight:600;letter-spacing:.22em;
@@ -179,9 +207,9 @@
       font-size:clamp(1.2rem,2.6vw,1.5rem);line-height:1.35;margin:0 0 14px}
     footer.site ul{list-style:none;margin:0;padding:0;font-size:15px}
     footer.site li{margin:0 0 10px}
-    footer.site a{color:var(--cream)}
+    footer.site a{color:#fff}
     footer.site .base{max-width:1120px;margin:44px auto 0;padding-top:22px;
-      border-top:1px solid rgba(244,236,223,.25);display:flex;flex-wrap:wrap;gap:14px;
+      border-top:1px solid rgba(255,255,255,.35);display:flex;flex-wrap:wrap;gap:14px;
       justify-content:space-between;font-size:13px}
   </style>
 </head>
@@ -219,7 +247,7 @@
   <img class="bg" src="https://static.wixstatic.com/media/a64e37_ce38f4cfd4a34c7c8343c43d11f5e622~mv2.jpg/v1/fill/w_1920,h_1080,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/a64e37_ce38f4cfd4a34c7c8343c43d11f5e622~mv2.jpg" alt="" aria-hidden="true">
   <div class="veil" aria-hidden="true"></div>
   <div class="top">
-    <p class="kicker">Western bay of Molunat &middot; near Dubrovnik &middot; Croatia</p>
+    <p class="kicker">Molunat, Konavle &middot; near Dubrovnik &middot; Croatia</p>
     <a class="tel" href="tel:+38598428555">+385&nbsp;98&nbsp;428&nbsp;555</a>
   </div>
   <div class="mid">
@@ -229,8 +257,11 @@
       <path d="M17 16 C21 15 24 12 24.5 9 C21 9.5 18 12 17 16Z"/>
       <path d="M17 22 C13 21 10 18 9.5 15 C13 15.5 16 18 17 22Z"/>
     </svg>
-    <h1 data-one-line>MOLONTA</h1>
-    <p class="estate-line">Heritage Estate</p>
+    <div class="lockup">
+      <h1 data-one-line>MOLONTA</h1>
+      <p class="estate-line">Heritage Estate</p>
+    </div>
+    <p class="since">Authentic Mediterranean &middot; since 1800</p>
     <p class="strap">The Mediterranean as it once was &mdash; the locals&rsquo; phrase
       for this bay, and the family has kept it true.</p>
     <div class="actions">
@@ -255,11 +286,12 @@
 
 <section class="ways" id="ways">
   <div class="wrap">
-    <p class="kicker">One estate, four ways in</p>
+    <p class="kicker">One estate, six ways in</p>
     <h2>The whole of it yours, one group at a time</h2>
-    <p class="intro">A private waterfront estate on 4.8 hectares of olive terraces and
-      stone paths: a 1930s stone house restored around its original walls, terraces
-      of 250-year-old olive trees, and the Adriatic at the foot of the garden.</p>
+    <p class="intro">A private waterfront estate on 48,000 square metres of olive
+      terraces and stone paths, in one of the last undeveloped bays on the mainland
+      Adriatic: a 1930s stone house restored around its original walls, terraces of
+      250-year-old olive trees, and the sea at the foot of the garden.</p>
     <nav class="index" aria-label="Explore the estate">
       <a href="#estate"><span class="num">01</span><span class="name">The estate</span>
         <span class="hint">House, pool &amp; grounds</span><span class="arrow">&rarr;</span></a>
@@ -267,7 +299,11 @@
         <span class="hint">Beach, mooring &amp; the yacht</span><span class="arrow">&rarr;</span></a>
       <a href="#table"><span class="num">03</span><span class="name">The table</span>
         <span class="hint">The land, the chef &amp; the konoba</span><span class="arrow">&rarr;</span></a>
-      <a href="#rates"><span class="num">04</span><span class="name">Rates &amp; stays</span>
+      <a href="#story"><span class="num">04</span><span class="name">The story</span>
+        <span class="hint">Since 1800, one family</span><span class="arrow">&rarr;</span></a>
+      <a href="#guide"><span class="num">05</span><span class="name">Guest guide</span>
+        <span class="hint">Services, experiences &amp; dining</span><span class="arrow">&rarr;</span></a>
+      <a href="#rates"><span class="num">06</span><span class="name">Rates &amp; stays</span>
         <span class="hint">2026 seasons, booked direct</span><span class="arrow">&rarr;</span></a>
     </nav>
   </div>
@@ -280,7 +316,8 @@
       <h2>Eleven acres, entirely yours</h2>
       <p>Built in the 1930s by the Metkovi&#263; family and restored around its
         original walls: handmade furniture, five-star comfort, and beds for up to
-        eight &mdash; with room for two more on request in a separate apartment.</p>
+        eight &mdash; with room for two more on request in a separate apartment.
+        Exclusively yours, one group at a time.</p>
       <ul>
         <li>A 14&nbsp;&times;&nbsp;5&nbsp;m infinity pool looking straight down the Adriatic</li>
         <li>A hot tub for five in the gardens</li>
@@ -304,13 +341,16 @@
     <div>
       <p class="kicker">02 &middot; The sea</p>
       <h2>Steps from the garden to the Adriatic</h2>
-      <p>A private beach with its own mooring, kayak and shower &mdash; and the
-        estate&rsquo;s skippered Prestige 34 yacht, exclusive to guests, for
-        days on the water and Dubrovnik by sea along the Konavle cliffs.</p>
+      <p>A private beach of sun-warmed stone platforms with its own mooring,
+        sunchairs, kayak and shower &mdash; and the estate&rsquo;s skippered
+        Jeanneau Prestige&nbsp;34, exclusive to guests, for hidden caves, the
+        islands, and Dubrovnik by sea: along the Konavle cliffs, docking at the
+        Old Town&rsquo;s own port.</p>
       <ul>
-        <li>Private beach with mooring, kayak and shower</li>
-        <li>Skippered Prestige 34, exclusive to the estate&rsquo;s guests</li>
-        <li>Dubrovnik by sea, along the Konavle cliffs</li>
+        <li>Private beach with mooring, sunchairs, kayak and shower</li>
+        <li>Skippered Jeanneau Prestige&nbsp;34, exclusive to the estate&rsquo;s guests</li>
+        <li>Dubrovnik by sea along the Konavle cliffs &mdash; and boat transfers on request</li>
+        <li>Kayaking, SUP, jet ski and small boats in Molunat bay</li>
       </ul>
       <div class="act">
         <a class="btn" href="mailto:info@molontaheritageestate.com?subject=Stay%20enquiry%20%E2%80%94%20Molonta%20Heritage%20Estate">Plan your stay</a>
@@ -319,7 +359,7 @@
     <div class="media">
       <figure class="lead"><div class="ph"><img loading="lazy" src="https://static.wixstatic.com/media/a64e37_c85c5d890c49471fb54a644190bbfa27~mv2.jpg/v1/fill/w_1200,h_900,al_c,q_85,enc_avif,quality_auto/a64e37_c85c5d890c49471fb54a644190bbfa27~mv2.jpg" alt="The private beach below the estate"></div>
         <figcaption>The private beach, with its own mooring</figcaption></figure>
-      <figure class="over"><div class="ph"><img loading="lazy" src="https://static.wixstatic.com/media/a64e37_df0749b5a054413fa63377b4363a51b9~mv2.jpg/v1/fill/w_900,h_600,al_c,q_85,enc_avif,quality_auto/a64e37_df0749b5a054413fa63377b4363a51b9~mv2.jpg" alt="The estate's skippered Prestige 34 yacht"></div></figure>
+      <figure class="over"><div class="ph"><img loading="lazy" src="https://static.wixstatic.com/media/a64e37_df0749b5a054413fa63377b4363a51b9~mv2.jpg/v1/fill/w_900,h_600,al_c,q_85,enc_avif,quality_auto/a64e37_df0749b5a054413fa63377b4363a51b9~mv2.jpg" alt="The estate's skippered Jeanneau Prestige 34 yacht"></div></figure>
     </div>
   </div>
 </section>
@@ -329,15 +369,17 @@
     <div>
       <p class="kicker">03 &middot; The table</p>
       <h2>Grown here, pressed here, poured here</h2>
-      <p>The estate feeds its guests from its own land: oil from 250-year-old
-        olive trees, wine, citrus and figs, jams and liqueurs. An al fresco
-        kitchen for long evenings, a private chef on request &mdash; and a konoba
-        500&nbsp;m along the bay.</p>
+      <p>The estate feeds its guests from its own land &mdash; oil from
+        250-year-old olive trees, wine, citrus, figs, carob, jams and liqueurs
+        &mdash; and from the bay: fresh fish from the local fishermen for the
+        grill. An al fresco kitchen for long evenings, a private chef on
+        request, a konoba 500&nbsp;m along the bay.</p>
       <ul>
-        <li>Al fresco kitchen and dining in the gardens</li>
-        <li>Private chef on request</li>
-        <li>Estate olive oil, wine, citrus, figs, jams and liqueurs</li>
-        <li>A konoba 500&nbsp;m from the gate</li>
+        <li>Al fresco kitchen and sea-breeze dining in the gardens</li>
+        <li>Private chef and fully catered dinners on request</li>
+        <li>Estate olive oil, wine, citrus, figs, carob, jams and liqueurs</li>
+        <li>Grocery stocking before arrival; food delivery to the villa</li>
+        <li>A konoba 500&nbsp;m from the gate; more restaurants 15 minutes away</li>
       </ul>
       <div class="act">
         <a class="btn" href="mailto:info@molontaheritageestate.com?subject=Stay%20enquiry%20%E2%80%94%20Molonta%20Heritage%20Estate">Plan your stay</a>
@@ -351,16 +393,120 @@
   </div>
 </section>
 
+<section class="feat flip" id="story">
+  <div class="wrap">
+    <div>
+      <p class="kicker">04 &middot; The story</p>
+      <h2>Stone, lime and cypress</h2>
+      <p>The estate&rsquo;s roots reach back to the early 18th century. The house
+        went up in the 1930s, built by three brothers and two sisters from what
+        the land gave: stone from local excavations, lime burned in kilns by the
+        beach &mdash; some still standing &mdash; and roof beams of cypress cut on
+        the estate. Local folklore held that a father planted fifty cypress trees
+        at a son&rsquo;s birth, so the wood would one day build his home. There
+        was no electricity; everything moved by horse, mule and donkey, and the
+        eldest brother worked in Argentina to help pay for it all.</p>
+      <p>The upper floor was the family&rsquo;s home; the cellars below held the
+        wine, oil, dried figs and carob the land produced. In 1966, home from
+        America, Mato Metkovi&#263; made it a holiday house and named it Villa
+        Palma. When the latest renovation began, the architects advised
+        demolition &mdash; the family kept the original walls instead.</p>
+      <blockquote class="pull">&ldquo;You preserved the soul of the house.&rdquo;
+        <footer>Said of the renovation</footer></blockquote>
+    </div>
+    <div class="media">
+      <figure class="lead"><div class="ph"><img loading="lazy" src="https://static.wixstatic.com/media/caa724_da877202405845599f250d8c2d085a61~mv2.jpg/v1/fill/w_1200,h_1180,al_c,q_85,enc_avif,quality_auto/caa724_da877202405845599f250d8c2d085a61~mv2.jpg" alt="The house through the family's years"></div>
+        <figcaption>The house, through the family&rsquo;s years</figcaption></figure>
+      <figure class="over"><div class="ph"><img loading="lazy" src="https://static.wixstatic.com/media/caa724_42f9b74a59b7426d8eb180919b96fd99~mv2.jpg/v1/fill/w_900,h_600,al_c,q_85,enc_avif,quality_auto/caa724_42f9b74a59b7426d8eb180919b96fd99~mv2.jpg" alt="Heritage details of the estate"></div></figure>
+    </div>
+  </div>
+</section>
+
 <div class="ticker" aria-hidden="true">
   <div class="track">
-    <span>Molonta &middot; Heritage Estate &middot; Molunat &middot; The western bay &middot;&nbsp;</span>
-    <span>Molonta &middot; Heritage Estate &middot; Molunat &middot; The western bay &middot;&nbsp;</span>
+    <span>Molonta &middot; Heritage Estate &middot; Authentic Mediterranean &middot; since 1800 &middot;&nbsp;</span>
+    <span>Molonta &middot; Heritage Estate &middot; Authentic Mediterranean &middot; since 1800 &middot;&nbsp;</span>
   </div>
 </div>
 
+<section class="guide" id="guide">
+  <div class="wrap">
+    <p class="kicker">05 &middot; The guest guide</p>
+    <h2>Everything the family can arrange</h2>
+    <p>The estate&rsquo;s own Guest Guide, in full &mdash; in-villa services,
+      recreation and excursions, and the tables they trust, all booked through
+      the family&rsquo;s concierge.</p>
+    <div class="groups">
+      <div>
+        <h3>In-villa</h3>
+        <ul class="menu">
+          <li><span class="n">Private chef</span><span class="dots"></span><span class="p">from &euro;400</span></li>
+          <li><span class="n">Catering</span><span class="dots"></span><span class="p">from &euro;60 / person</span></li>
+          <li><span class="n">Sommelier</span><span class="dots"></span><span class="p">on request</span></li>
+          <li><span class="n">Signature cocktails</span><span class="dots"></span><span class="p">on request</span></li>
+          <li><span class="n">Massage <small>Minimum two hours</small></span><span class="dots"></span><span class="p">from &euro;100</span></li>
+          <li><span class="n">Yoga</span><span class="dots"></span><span class="p">from &euro;170</span></li>
+          <li><span class="n">Hair &amp; make-up stylist <small>Minimum two persons</small></span><span class="dots"></span><span class="p">from &euro;300</span></li>
+          <li><span class="n">Babysitter</span><span class="dots"></span><span class="p">from &euro;50</span></li>
+          <li><span class="n">Laundry service</span><span class="dots"></span><span class="p">&euro;40 / hour</span></li>
+          <li><span class="n">Private transfers <small>Mercedes E class (4) &middot; V class (7)</small></span><span class="dots"></span><span class="p">on request</span></li>
+          <li><span class="n">Rent a car</span><span class="dots"></span><span class="p">on request</span></li>
+          <li><span class="n">The Jeanneau Prestige&nbsp;34</span><span class="dots"></span><span class="p">from &euro;1,500</span></li>
+          <li><span class="n">Live saxophone</span><span class="dots"></span><span class="p">from &euro;500</span></li>
+          <li><span class="n">Private folklore show</span><span class="dots"></span><span class="p">from &euro;500</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Recreation &amp; excursions</h3>
+        <ul class="menu">
+          <li><span class="n">Horse riding, Konavle</span><span class="dots"></span><span class="p">from &euro;120</span></li>
+          <li><span class="n">Kayaking &middot; SUP <small>Molunat bay</small></span><span class="dots"></span><span class="p">from &euro;30</span></li>
+          <li><span class="n">Jet ski</span><span class="dots"></span><span class="p">from &euro;80</span></li>
+          <li><span class="n">Boat hire, Molunat</span><span class="dots"></span><span class="p">from &euro;50</span></li>
+          <li><span class="n">Scuba diving</span><span class="dots"></span><span class="p">from &euro;100</span></li>
+          <li><span class="n">Big game fishing</span><span class="dots"></span><span class="p">on request</span></li>
+          <li><span class="n">Panorama zipline</span><span class="dots"></span><span class="p">&euro;50 / person</span></li>
+          <li><span class="n">Sky bike</span><span class="dots"></span><span class="p">&euro;40 / person</span></li>
+          <li><span class="n">Buggy safari, Konavle</span><span class="dots"></span><span class="p">on request</span></li>
+          <li><span class="n">ATV quad safari</span><span class="dots"></span><span class="p">on request</span></li>
+          <li><span class="n">Karting <small>Herceg Novi, Montenegro</small></span><span class="dots"></span><span class="p">from &euro;20</span></li>
+          <li><span class="n">Silk &amp; embroidery visit <small>1&ndash;1.5 h, with homemade cake, juice or tea</small></span><span class="dots"></span><span class="p">&euro;200</span></li>
+          <li><span class="n">Embroidery workshop <small>Two hours</small></span><span class="dots"></span><span class="p">&euro;400</span></li>
+          <li><span class="n">Konavle immersion <small>Min. two &middot; guide, chauffeur, admissions &amp; tasting</small></span><span class="dots"></span><span class="p">from &euro;500</span></li>
+          <li><span class="n">Wine tour</span><span class="dots"></span><span class="p">on request</span></li>
+          <li><span class="n">Dubrovnik experience <small>Min. two &middot; guide, chauffeur &amp; admissions</small></span><span class="dots"></span><span class="p">from &euro;850</span></li>
+          <li><span class="n">Montenegro guided tour <small>Min. two &middot; guide, chauffeur &amp; admissions</small></span><span class="dots"></span><span class="p">from &euro;650</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Dining they recommend</h3>
+        <div class="places">
+          <p><b>Molunat</b> Lancana &middot; Monika &middot; Odgusta Grill &amp; Pizza</p>
+          <p><b>Konavle</b> Konavoski Dvori &middot; Vinica Monkovi&#263; &middot; Kora&#263;eva Ku&#263;a</p>
+          <p><b>Cavtat</b> Bugenvila &middot; Villa Banac &middot; Dolium</p>
+          <p><b>The islands</b> St.&nbsp;Pietro (St.&nbsp;Pietro) &middot; BOWA (&Scaron;ipan)</p>
+          <p><b>Ston</b> Kapetanova Ku&#263;a</p>
+          <p><b>Dubrovnik</b> Nautika &middot; Proto &middot; 360 &middot; Marco Polo &middot;
+            Restaurant Dubrovnik &middot; Stara Loza &middot; Panorama &middot;
+            Ezza Steak &amp; Cocktail Bar &middot; Rudjer &middot; Bota &Scaron;are
+            Oyster &amp; Sushi Bar &middot; Zuzori &middot; Forty Four</p>
+          <p><b>Montenegro</b> Fisherman&rsquo;s Village Club (Lu&scaron;tica) &middot;
+            Pool Restaurant (Mamula Island) &middot; Conte (Perast) &middot;
+            Adriatica (Kamenari)</p>
+        </div>
+      </div>
+    </div>
+    <p class="note">Prices as printed in the estate&rsquo;s 2026 Guest Guide;
+      everything above is arranged through the family and their 24/7 concierge.
+      All-inclusive stays &mdash; private chef, wellness days, a full-day yacht
+      excursion to Dubrovnik with a private guided tour &mdash; can be built
+      around a booking.</p>
+  </div>
+</section>
+
 <section class="stays" id="rates">
   <div class="wrap">
-    <p class="kicker">04 &middot; Rates &amp; stays</p>
+    <p class="kicker">06 &middot; Rates &amp; stays</p>
     <h2>2026, booked directly with the family</h2>
     <table class="rates">
       <tr><td>May &amp; October<small>Three-night minimum, arrive any day</small></td>
@@ -371,10 +517,12 @@
         <td>&euro;19,950 a week</td></tr>
     </table>
     <p class="terms">The whole estate, exclusively yours, with daily housekeeping,
-      24/7 concierge and a welcome prepared before you arrive. Small weddings and
-      events on request. 2027 rates are released on 1 October 2026.</p>
+      24/7 concierge and a welcome prepared before you arrive. The family hosts a
+      limited number of groups each season, on a weekly rhythm in summer. Small
+      weddings, retreats and curated events on request. 2027 rates are released
+      on 1 October 2026.</p>
     <p class="terms"><strong>Booked directly with the family &mdash; best rates, no
-      platform fees.</strong></p>
+      platform fees, and the direct-booking amenities that come with them.</strong></p>
     <div class="act" style="margin-top:26px;display:flex;gap:22px;align-items:center;flex-wrap:wrap">
       <a class="btn" href="mailto:info@molontaheritageestate.com?subject=Stay%20enquiry%20%E2%80%94%20Molonta%20Heritage%20Estate">Plan your stay</a>
       <a class="tel" href="tel:+38598428555">+385&nbsp;98&nbsp;428&nbsp;555</a>
@@ -388,11 +536,11 @@
     <h2>Hosted by the family that built it</h2>
     <div class="cols">
       <div>
-        <p>The house went up in the 1930s and took the name Villa Palma in 1966;
-          today, renamed Molonta, it is kept by the third generation of the
-          Metkovi&#263; family &mdash; your hosts Lucija, Sanja and Nik&scaron;a &mdash;
-          who welcome one group at a time, arrange private door-to-door transfers
-          from Dubrovnik Airport, and prepare the house before you arrive.</p>
+        <p>Kept today by the third generation of the Metkovi&#263; family &mdash;
+          your hosts Lucija, Sanja and Nik&scaron;a &mdash; the estate carries more
+          than sixty years of welcoming guests. One group at a time, met with
+          private door-to-door transfers from Dubrovnik Airport, a house prepared
+          before arrival, and a concierge on call throughout the stay.</p>
       </div>
       <div>
         <blockquote>&ldquo;It is a very special place with very special people! Our
@@ -417,8 +565,14 @@
 </section>
 
 <section class="close band-deep">
+  <svg class="branch" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" aria-hidden="true">
+    <path d="M17 30 C17 18 17 10 17 4"/>
+    <path d="M17 10 C13 9 10 6 9.5 3 C13 3.5 16 6 17 10Z"/>
+    <path d="M17 16 C21 15 24 12 24.5 9 C21 9.5 18 12 17 16Z"/>
+    <path d="M17 22 C13 21 10 18 9.5 15 C13 15.5 16 18 17 22Z"/>
+  </svg>
   <div class="wrap">
-    <p class="kicker">Molunat &middot; near Dubrovnik</p>
+    <p class="kicker">Molunat, Konavle &middot; near Dubrovnik</p>
     <h2>The whole estate, one group at a time</h2>
     <p>Booked directly with the family &mdash; no platform fees.</p>
     <div class="actions">
@@ -433,7 +587,8 @@
     <div>
       <p class="mark">Molonta Heritage Estate</p>
       <p class="quiet" style="max-width:34ch">A private waterfront heritage estate in
-        the western bay of Molunat.</p>
+        the western bay of Molunat &mdash; one of the last undeveloped bays on the
+        mainland Adriatic.</p>
     </div>
     <div>
       <address>Molunat 6<br>20218 Molunat<br>Croatia</address>
@@ -445,8 +600,9 @@
     </div>
     <div>
       <p class="mark" style="font-size:13px">Getting here</p>
-      <p class="quiet">About 25 minutes from Dubrovnik Airport. The family arranges
-        private, door-to-door transfers &mdash; in high season, leave the hire car
+      <p class="quiet">About 25 minutes from Dubrovnik Airport and 40 from the Old
+        Town. The family arranges private, door-to-door transfers &mdash; and boat
+        transfers from Dubrovnik on request. In high season, leave the hire car
         behind.</p>
       <ul>
         <li><a class="plain" href="https://www.instagram.com/molontaestate">Instagram</a>
