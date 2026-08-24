@@ -47,7 +47,7 @@ page carries `noindex,nofollow`, and an `X-Robots-Tag` header backs both up.
 
 ## External resources
 
-- The nine photographs on `/` are served from the estate's own Wix media
+- The photographs on `/` are served from the estate's own Wix media
   library (`static.wixstatic.com`) — they could not be vendored from the build
   environment, and they remain the estate's property, shown back to them in
   their own pitch. Swap to locally hosted files on transfer.

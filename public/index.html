@@ -9,7 +9,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="fonts/fonts.css">
   <style>
-    /* ── Tokens: the estate's own materials — stone, plaster, cypress, terracotta ── */
+    /* ── Tokens: white ground, one quiet colour ── */
     :root{
       --bg:#ffffff;        /* white — the page       */
       --ink:#85654a;       /* light caramel brown    */
@@ -18,7 +18,7 @@
       --deep:#2c2016;      /* espresso               */
       --cream:#f4ecdf;
       --brown-soft:#8f6b4d;
-      --olive:#8a6a4f; --adriatic:#7d5c40; --citrus:#6f5137; --terra:#5c4227;
+      --ph:#e7dfcd;        /* photo placeholder      */
       --display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
       --body:"Inter",system-ui,-apple-system,sans-serif;
     }
@@ -31,50 +31,55 @@
     /* Typography laws: headings never capped at a measure, never hyphenated */
     h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.04;
       margin:0 0 .4em;max-width:none;hyphens:none;overflow-wrap:normal}
-    h1{font-size:clamp(2.7rem,13vw,5.2rem);letter-spacing:.05em}
-    h2{font-size:clamp(1.9rem,5.2vw,3rem)}
+    h1{font-size:clamp(2.9rem,14vw,6.4rem);letter-spacing:.05em}
+    h2{font-size:clamp(2rem,5.6vw,3.2rem)}
     h3{font-size:clamp(1.25rem,3.2vw,1.6rem);font-weight:700}
     p{max-width:65ch;margin:0 0 1em}
     .kicker{font:600 11.5px/1.4 var(--body);letter-spacing:.22em;text-transform:uppercase;
       color:var(--accent);margin:0 0 14px}
     .band-deep .kicker{color:#d9c3a6}
 
-    section{padding:64px 20px}
-    .wrap{max-width:1080px;margin:0 auto}
+    section{padding:88px 20px}
+    .wrap{max-width:1120px;margin:0 auto}
     .band-deep{background:var(--deep);color:var(--cream)}
     .band-panel{background:var(--panel)}
 
     .btn{display:inline-block;background:var(--accent);color:#fff;
       font:600 15px/1 var(--body);letter-spacing:.05em;text-transform:uppercase;
-      padding:16px 28px;text-decoration:none;border:0}
+      padding:17px 30px;text-decoration:none;border:0}
     .btn:hover{background:#5c4227}
-    .quiet{font-size:14px;opacity:.85}
+    .tel{font:600 16px/1 var(--body);color:var(--ink);text-decoration:none;
+      border-bottom:2px solid var(--accent);padding-bottom:4px;white-space:nowrap}
+    .band-deep .tel{color:var(--cream)}
+    .quiet{font-size:14px}
     .plain{color:inherit;text-decoration:underline;text-decoration-color:var(--accent);
       text-underline-offset:3px}
 
-    /* ── Hero ── */
-    .hero{padding:76px 20px 60px}
-    .hero .wrap{display:grid;gap:36px;align-items:end;
-      grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
+    /* ── Hero: the full first view, their bay behind a cream veil ── */
+    .hero{position:relative;min-height:calc(100vh - 48px);min-height:calc(100svh - 48px);
+      display:flex;flex-direction:column;padding:0 20px;overflow:hidden}
+    .hero .bg,.hero .veil{position:absolute;inset:0}
+    .hero .bg{object-fit:cover;width:100%;height:100%;background:var(--ph)}
+    .hero .veil{background:rgba(247,241,230,.87)}
+    .hero > div{position:relative}
+    .hero .top{display:flex;justify-content:space-between;align-items:center;gap:14px;
+      flex-wrap:wrap;padding:22px 0;max-width:1120px;margin:0 auto;width:100%}
+    .hero .top .kicker{margin:0}
+    .hero .mid{flex:1;display:flex;flex-direction:column;justify-content:center;
+      align-items:center;text-align:center;padding:44px 0}
+    .sprig{width:34px;height:34px;margin-bottom:18px;color:var(--brown-soft)}
     .hero h1{margin:0}
-    .hero .estate-line{font-family:var(--display);font-weight:600;letter-spacing:.34em;
-      text-transform:uppercase;font-size:clamp(.95rem,2.6vw,1.25rem);margin:2px 0 22px;
+    .estate-line{font-family:var(--display);font-weight:600;letter-spacing:.4em;
+      text-transform:uppercase;font-size:clamp(.95rem,2.8vw,1.3rem);margin:6px 0 26px;
       color:var(--brown-soft)}
-    .hero p.lede{font-size:clamp(1.05rem,2.3vw,1.25rem)}
-    .hero .actions{margin-top:26px;display:flex;gap:18px;flex-wrap:wrap;align-items:center}
-    .hero .tel{font:600 17px/1 var(--body);color:var(--ink);text-decoration:none;
-      border-bottom:2px solid var(--accent);padding-bottom:4px}
-    .hero .direct{margin-top:18px;font-size:13.5px;letter-spacing:.06em;
-      text-transform:uppercase;color:var(--brown-soft)}
-    /* Arrival card — the hero aside (no timetable in the brief, so the season sheet sits here) */
-    .arrival{background:var(--panel);color:var(--ink);padding:26px;position:relative;
-      border:1px solid rgba(61,43,31,.18)}
-    .arrival .tag{position:absolute;top:0;right:0;background:var(--deep);color:#fff;
-      font:700 10px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;padding:6px 9px}
-    .arrival dl{margin:0;display:grid;grid-template-columns:1fr auto;gap:10px 14px;font-size:15px}
-    .arrival dt{font-weight:600}
-    .arrival dd{margin:0;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-    .arrival .foot{margin:16px 0 0;font-size:13px}
+    .hero .strap{font-family:var(--display);font-size:clamp(1.2rem,3vw,1.65rem);
+      line-height:1.4;max-width:34ch;margin:0 auto 30px}
+    .hero .actions{display:flex;gap:22px;flex-wrap:wrap;align-items:center;justify-content:center}
+    .hero .bottom{display:flex;justify-content:center;padding:26px 0 30px}
+    .scroll-cue{font:600 11px/1 var(--body);letter-spacing:.26em;text-transform:uppercase;
+      color:var(--brown-soft);text-decoration:none;display:inline-flex;flex-direction:column;
+      align-items:center;gap:10px}
+    .scroll-cue:after{content:"";width:1px;height:34px;background:var(--brown-soft)}
 
     /* ── Facts strip ── */
     .facts{padding:0 20px;background:var(--panel)}
@@ -86,71 +91,93 @@
     .facts span{font-family:var(--display);font-weight:600;font-size:21px;color:var(--ink)}
     .facts a{color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--accent)}
 
-    /* ── Tabs: radio-driven, no JS ── */
-    .tabs input{position:absolute;opacity:0;pointer-events:none}
-    .tabbar{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 0}
-    .tabbar label{font:600 13.5px/1 var(--body);letter-spacing:.09em;text-transform:uppercase;
-      padding:14px 20px 12px;background:var(--panel);cursor:pointer;
-      border-top:4px solid var(--tc,var(--accent));user-select:none}
-    .tabbar label:hover{background:#efe6d5}
-    .panel{display:none;background:var(--panel);padding:34px 26px;
-      border-top:4px solid var(--tc,var(--accent))}
-    #t-estate:checked ~ .panel-estate,#t-sea:checked ~ .panel-sea,
-    #t-table:checked ~ .panel-table,#t-rates:checked ~ .panel-rates{display:block}
-    #t-estate:checked ~ .tabbar .l-estate,#t-sea:checked ~ .tabbar .l-sea,
-    #t-table:checked ~ .tabbar .l-table,#t-rates:checked ~ .tabbar .l-rates{
-      background:var(--tc);color:#fff}
-    .l-estate,.panel-estate{--tc:var(--olive)}
-    .l-sea,.panel-sea{--tc:var(--adriatic)}
-    .l-table,.panel-table{--tc:var(--citrus)}
-    .l-rates,.panel-rates{--tc:var(--terra)}
-    .panel .kicker{color:var(--tc)}
-    .grid{display:grid;gap:18px;margin:22px 0 0;
+    /* ── The index: four ways in, oversized ── */
+    .ways .intro{max-width:65ch}
+    .index{margin:34px 0 0;border-top:1px solid rgba(61,43,31,.22)}
+    .index a{display:flex;align-items:baseline;gap:22px;flex-wrap:wrap;
+      padding:26px 6px;text-decoration:none;border-bottom:1px solid rgba(61,43,31,.22);
+      transition:background .2s}
+    .index a:hover{background:var(--panel)}
+    .index .num{font:600 13px/1 var(--body);letter-spacing:.14em;color:var(--accent);
+      min-width:34px}
+    .index .name{font-family:var(--display);font-weight:600;
+      font-size:clamp(1.7rem,5.4vw,2.9rem);line-height:1.05}
+    .index .hint{font-size:14px;color:var(--brown-soft);margin-left:auto}
+    .index .arrow{font-family:var(--body);font-weight:600;color:var(--accent);
+      transition:transform .2s}
+    .index a:hover .arrow{transform:translateX(6px)}
+
+    /* ── Feature sections: text beside imagery, alternating ── */
+    .feat .wrap{display:grid;gap:52px;align-items:center;
       grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
-    .card{background:var(--bg);border:1px solid rgba(0,0,0,.12);padding:22px;position:relative}
-    .card .tag{position:absolute;top:0;right:0;background:var(--deep);color:#fff;
-      font:700 10px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;padding:6px 9px}
-    .card p{font-size:15px;margin:0}
-    .panel .act{margin-top:26px}
-    /* Rates table */
-    .rates{width:100%;border-collapse:collapse;background:var(--bg);margin:22px 0 0}
-    .rates td{padding:15px 16px;border:1px solid rgba(0,0,0,.14);font-size:15px;vertical-align:middle}
+    .feat.flip .media{order:-1}
+    .media{position:relative}
+    .media figure{margin:0;background:var(--bg)}
+    .media .ph{background:var(--ph);overflow:hidden;border:1px solid rgba(61,43,31,.16)}
+    .media .lead .ph{aspect-ratio:4/3}
+    .media img{width:100%;height:100%;object-fit:cover}
+    .media .over{width:62%;margin:-16% 0 0 auto;position:relative}
+    .feat.flip .media .over{margin:-16% auto 0 0}
+    .media .over .ph{aspect-ratio:3/2;box-shadow:0 0 0 10px var(--bg)}
+    .media figcaption{font-size:12.5px;letter-spacing:.05em;padding:10px 2px 0;
+      color:var(--brown-soft)}
+    .feat ul{list-style:none;margin:26px 0 0;padding:0;font-size:15.5px}
+    .feat li{padding:12px 2px;border-top:1px solid rgba(61,43,31,.18)}
+    .feat li:last-child{border-bottom:1px solid rgba(61,43,31,.18)}
+    .feat .act{margin-top:30px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+
+    /* ── Ticker ── */
+    .ticker{padding:26px 0;background:var(--panel);overflow:hidden}
+    .ticker .track{display:flex;gap:54px;white-space:nowrap;width:max-content;
+      animation:tick 30s linear infinite}
+    .ticker span{font-family:var(--display);font-weight:600;letter-spacing:.3em;
+      text-transform:uppercase;font-size:clamp(1.15rem,3vw,1.7rem);color:var(--brown-soft)}
+    @keyframes tick{to{transform:translateX(-50%)}}
+    @media (prefers-reduced-motion:reduce){.ticker .track{animation:none}}
+
+    /* ── Rates ── */
+    .rates{width:100%;border-collapse:collapse;background:var(--bg);margin:26px 0 0}
+    .rates td{padding:16px;border:1px solid rgba(61,43,31,.2);font-size:15px;vertical-align:middle}
     .rates td:last-child{text-align:right;font-family:var(--display);font-weight:700;
       font-size:21px;white-space:nowrap}
     .rates small{display:block;font:500 12.5px/1.4 var(--body);margin-top:2px}
-    /* Under 600px the tabs become stacked sections */
-    @media (max-width:599px){
-      .tabbar{display:none}
-      .panel{display:block;margin-top:14px}
-    }
+    .terms{margin:22px 0 0;font-size:14.5px;max-width:65ch}
 
-    /* ── Proof ── */
-    .shots{display:grid;gap:14px;margin:26px 0 0;
+    /* ── Family, word & print ── */
+    .family .cols{display:grid;gap:52px;align-items:start;margin-top:8px;
       grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
-    .shots figure{margin:0;background:var(--bg);border:1px solid rgba(0,0,0,.12)}
-    .shots .ph{aspect-ratio:3/2;background:#e7dfcd;overflow:hidden}
-    .shots img{width:100%;height:100%;object-fit:cover}
-    .shots figcaption{font-size:13px;padding:10px 12px;letter-spacing:.04em}
-    .press{margin-top:34px}
-    blockquote{margin:0;font-family:var(--display);font-size:clamp(1.15rem,2.6vw,1.5rem);
-      line-height:1.35;max-width:34ch}
+    blockquote{margin:0 0 30px;font-family:var(--display);
+      font-size:clamp(1.15rem,2.6vw,1.5rem);line-height:1.35;max-width:34ch}
     blockquote footer{font:600 12px/1.4 var(--body);letter-spacing:.14em;
       text-transform:uppercase;margin-top:12px}
-
-    /* ── Find us ── */
-    .find .wrap{display:grid;gap:36px;align-items:start;
+    .press{display:grid;gap:18px;margin:44px 0 0;
       grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
-    .find address{font-style:normal;font-family:var(--display);font-weight:600;
-      font-size:clamp(1.3rem,3vw,1.7rem);line-height:1.3;margin:0 0 14px}
-    .find ul{list-style:none;margin:0;padding:0;font-size:15.5px}
-    .find li{margin:0 0 10px}
+    .press article{background:var(--bg);border:1px solid rgba(61,43,31,.16);
+      padding:22px;position:relative}
+    .press .tag{position:absolute;top:0;right:0;background:var(--deep);color:#fff;
+      font:700 10px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;padding:6px 9px}
+    .press h3{font-size:1.15rem;margin:0 0 8px}
+    .press p{font-size:14.5px;margin:0}
 
-    footer.site{background:var(--deep);color:var(--cream);padding:42px 20px}
-    footer.site .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+    /* ── Close ── */
+    .close{text-align:center;padding:110px 20px}
+    .close h2{margin:0 auto .5em}
+    .close p{margin:0 auto 32px}
+    .close .actions{display:flex;gap:22px;justify-content:center;align-items:center;flex-wrap:wrap}
+
+    footer.site{background:var(--deep);color:var(--cream);padding:64px 20px 42px}
+    footer.site .wrap{display:grid;gap:44px;
+      grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr))}
     footer.site .mark{font-family:var(--display);font-weight:600;letter-spacing:.22em;
-      text-transform:uppercase;font-size:15px}
+      text-transform:uppercase;font-size:16px;margin:0 0 12px}
+    footer.site address{font-style:normal;font-family:var(--display);font-weight:600;
+      font-size:clamp(1.2rem,2.6vw,1.5rem);line-height:1.35;margin:0 0 14px}
+    footer.site ul{list-style:none;margin:0;padding:0;font-size:15px}
+    footer.site li{margin:0 0 10px}
     footer.site a{color:var(--cream)}
-    footer.site .quiet{font-size:13px}
+    footer.site .base{max-width:1120px;margin:44px auto 0;padding-top:22px;
+      border-top:1px solid rgba(244,236,223,.25);display:flex;flex-wrap:wrap;gap:14px;
+      justify-content:space-between;font-size:13px}
   </style>
 </head>
 <body>
@@ -183,31 +210,31 @@
   <a href="/offer/">The offer</a>
 </nav>
 
-<header class="hero">
-  <div class="wrap">
-    <div>
-      <p class="kicker">Western bay of Molunat &middot; near Dubrovnik &middot; Croatia</p>
-      <h1 data-one-line>MOLONTA</h1>
-      <p class="estate-line">Heritage Estate</p>
-      <p class="lede">A private waterfront estate on 4.8 hectares of olive terraces and stone
-        paths — the whole of it yours, one group at a time, hosted by the family
-        that built it.</p>
-      <div class="actions">
-        <a class="btn" href="mailto:info@molontaheritageestate.com?subject=Stay%20enquiry%20%E2%80%94%20Molonta%20Heritage%20Estate">Plan your stay</a>
-        <a class="tel" href="tel:+38598428555">+385&nbsp;98&nbsp;428&nbsp;555</a>
-      </div>
-      <p class="direct">Booked directly with the family &middot; no platform fees</p>
+<header class="hero" id="top">
+  <img class="bg" src="https://static.wixstatic.com/media/a64e37_ce38f4cfd4a34c7c8343c43d11f5e622~mv2.jpg/v1/fill/w_1920,h_1080,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/a64e37_ce38f4cfd4a34c7c8343c43d11f5e622~mv2.jpg" alt="" aria-hidden="true">
+  <div class="veil" aria-hidden="true"></div>
+  <div class="top">
+    <p class="kicker">Western bay of Molunat &middot; near Dubrovnik &middot; Croatia</p>
+    <a class="tel" href="tel:+38598428555">+385&nbsp;98&nbsp;428&nbsp;555</a>
+  </div>
+  <div class="mid">
+    <svg class="sprig" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+      <path d="M17 30 C17 18 17 10 17 4"/>
+      <path d="M17 10 C13 9 10 6 9.5 3 C13 3.5 16 6 17 10Z"/>
+      <path d="M17 16 C21 15 24 12 24.5 9 C21 9.5 18 12 17 16Z"/>
+      <path d="M17 22 C13 21 10 18 9.5 15 C13 15.5 16 18 17 22Z"/>
+    </svg>
+    <h1 data-one-line>MOLONTA</h1>
+    <p class="estate-line">Heritage Estate</p>
+    <p class="strap">The Mediterranean as it once was &mdash; the locals&rsquo; phrase
+      for this bay, and the family has kept it true.</p>
+    <div class="actions">
+      <a class="btn" href="mailto:info@molontaheritageestate.com?subject=Stay%20enquiry%20%E2%80%94%20Molonta%20Heritage%20Estate">Plan your stay</a>
+      <a class="tel" href="#rates">2026 rates</a>
     </div>
-    <aside class="arrival" aria-label="2026 seasons at a glance">
-      <span class="tag">2026 seasons</span>
-      <dl>
-        <dt>May &amp; October</dt><dd>&euro;1,850 a night</dd>
-        <dt>June &amp; September</dt><dd>&euro;2,250 a night</dd>
-        <dt>July &amp; August</dt><dd>&euro;19,950 a week</dd>
-      </dl>
-      <p class="foot">July &amp; August run Saturday to Saturday, seven nights.
-        Every other month: three nights, arrive any day.</p>
-    </aside>
+  </div>
+  <div class="bottom">
+    <a class="scroll-cue" href="#ways">Scroll to explore</a>
   </div>
 </header>
 
@@ -221,185 +248,211 @@
   </div>
 </div>
 
-<section class="tabs" id="estate">
+<section class="ways" id="ways">
   <div class="wrap">
     <p class="kicker">One estate, four ways in</p>
-    <h2>The Mediterranean as it once was</h2>
-    <p>That is the locals&rsquo; phrase for this bay, and the family has kept it true:
-      a 1930s stone house restored around its original walls, terraces of
-      250-year-old olive trees, and the Adriatic at the foot of the garden.</p>
+    <h2>The whole of it yours, one group at a time</h2>
+    <p class="intro">A private waterfront estate on 4.8 hectares of olive terraces and
+      stone paths: a 1930s stone house restored around its original walls, terraces
+      of 250-year-old olive trees, and the Adriatic at the foot of the garden.</p>
+    <nav class="index" aria-label="Explore the estate">
+      <a href="#estate"><span class="num">01</span><span class="name">The estate</span>
+        <span class="hint">House, pool &amp; grounds</span><span class="arrow">&rarr;</span></a>
+      <a href="#sea"><span class="num">02</span><span class="name">The sea</span>
+        <span class="hint">Beach, mooring &amp; the yacht</span><span class="arrow">&rarr;</span></a>
+      <a href="#table"><span class="num">03</span><span class="name">The table</span>
+        <span class="hint">The land, the chef &amp; the konoba</span><span class="arrow">&rarr;</span></a>
+      <a href="#rates"><span class="num">04</span><span class="name">Rates &amp; stays</span>
+        <span class="hint">2026 seasons, booked direct</span><span class="arrow">&rarr;</span></a>
+    </nav>
+  </div>
+</section>
 
-    <input type="radio" name="tab" id="t-estate" checked>
-    <input type="radio" name="tab" id="t-sea">
-    <input type="radio" name="tab" id="t-table">
-    <input type="radio" name="tab" id="t-rates">
-
-    <div class="tabbar" role="presentation">
-      <label class="l-estate" for="t-estate">The estate</label>
-      <label class="l-sea" for="t-sea">The sea</label>
-      <label class="l-table" for="t-table">The table</label>
-      <label class="l-rates" for="t-rates">Rates &amp; stays</label>
-    </div>
-
-    <div class="panel panel-estate">
-      <p class="kicker">The estate</p>
-      <h3>Eleven acres, entirely yours</h3>
-      <div class="grid">
-        <div class="card"><span class="tag">The house</span>
-          <h3>Stone &amp; cypress</h3>
-          <p>Built in the 1930s by the Metkovi&#263; family and restored around its
-            original walls. Handmade furniture, five-star comfort, and beds for
-            up to eight — with room for two more on request in a separate
-            apartment.</p></div>
-        <div class="card"><span class="tag">The water</span>
-          <h3>Pool &amp; hot tub</h3>
-          <p>A 14&nbsp;&times;&nbsp;5&nbsp;m infinity pool looking straight down the
-            Adriatic, and a hot tub for five in the gardens.</p></div>
-        <div class="card"><span class="tag">The grounds</span>
-          <h3>Gardens &amp; play</h3>
-          <p>Terraced olives, citrus and figs; a game room with home cinema and
-            billiards, an outdoor gym, private parking and wifi throughout.</p></div>
+<section class="feat band-panel" id="estate">
+  <div class="wrap">
+    <div>
+      <p class="kicker">01 &middot; The estate</p>
+      <h2>Eleven acres, entirely yours</h2>
+      <p>Built in the 1930s by the Metkovi&#263; family and restored around its
+        original walls: handmade furniture, five-star comfort, and beds for up to
+        eight &mdash; with room for two more on request in a separate apartment.</p>
+      <ul>
+        <li>A 14&nbsp;&times;&nbsp;5&nbsp;m infinity pool looking straight down the Adriatic</li>
+        <li>A hot tub for five in the gardens</li>
+        <li>Game room with home cinema and billiards; outdoor gym</li>
+        <li>Terraced olives, citrus and figs; private parking; wifi throughout</li>
+      </ul>
+      <div class="act">
+        <a class="btn" href="mailto:info@molontaheritageestate.com?subject=Stay%20enquiry%20%E2%80%94%20Molonta%20Heritage%20Estate">Plan your stay</a>
       </div>
-      <p class="act"><a class="btn" href="mailto:info@molontaheritageestate.com?subject=Stay%20enquiry%20%E2%80%94%20Molonta%20Heritage%20Estate">Plan your stay</a></p>
     </div>
-
-    <div class="panel panel-sea">
-      <p class="kicker">The sea</p>
-      <h3>Your own way onto the Adriatic</h3>
-      <div class="grid">
-        <div class="card"><span class="tag">The beach</span>
-          <h3>Private beach</h3>
-          <p>Sun-warmed stone platforms with sunchairs and a shower, a kayak for
-            the bay — and a mooring if you arrive by boat.</p></div>
-        <div class="card"><span class="tag">The boat</span>
-          <h3>Estate yacht</h3>
-          <p>A skippered Prestige&nbsp;34 motor yacht, exclusive to guests of the
-            estate. Coves, caves and island days along the coastline.</p></div>
-        <div class="card"><span class="tag">The city</span>
-          <h3>Dubrovnik by sea</h3>
-          <p>Cruise beneath the Konavle cliffs, swim on the way, and dock at the
-            Old Town port — the way the city is meant to be arrived at.</p></div>
-      </div>
-      <p class="act"><a class="btn" href="mailto:info@molontaheritageestate.com?subject=Stay%20enquiry%20%E2%80%94%20Molonta%20Heritage%20Estate">Plan your stay</a></p>
-    </div>
-
-    <div class="panel panel-table">
-      <p class="kicker">The table</p>
-      <h3>Fed by the estate itself</h3>
-      <div class="grid">
-        <div class="card"><span class="tag">The land</span>
-          <h3>Estate produce</h3>
-          <p>Organic olive oil pressed from the estate&rsquo;s own 250-year-old trees,
-            with wine, citrus, figs, carob, jams and homemade liqueurs.</p></div>
-        <div class="card"><span class="tag">The chef</span>
-          <h3>Chef at the villa</h3>
-          <p>Private chefs and fully catered dinners at the al fresco kitchen,
-            sea breeze included.</p></div>
-        <div class="card"><span class="tag">The ease</span>
-          <h3>Stocked &amp; served</h3>
-          <p>Groceries stocked before you land, restaurant delivery to the
-            terrace, and a good local konoba 500&nbsp;m down the lane.</p></div>
-      </div>
-      <p class="act"><a class="btn" href="mailto:info@molontaheritageestate.com?subject=Stay%20enquiry%20%E2%80%94%20Molonta%20Heritage%20Estate">Plan your stay</a></p>
-    </div>
-
-    <div class="panel panel-rates">
-      <p class="kicker">Rates &amp; stays</p>
-      <h3>2026 — the whole estate, one rate</h3>
-      <table class="rates">
-        <tbody>
-          <tr><td>May &amp; October<small>Three-night minimum, arrive any day</small></td>
-              <td>&euro;1,850<small>a night</small></td></tr>
-          <tr><td>June &amp; September<small>Three-night minimum, arrive any day</small></td>
-              <td>&euro;2,250<small>a night</small></td></tr>
-          <tr><td>July &amp; August<small>Saturday to Saturday, seven nights</small></td>
-              <td>&euro;19,950<small>a week</small></td></tr>
-        </tbody>
-      </table>
-      <div class="grid">
-        <div class="card"><span class="tag">Included</span>
-          <h3>Every stay</h3>
-          <p>Full private use of the estate &middot; dedicated concierge with 24/7
-            support &middot; daily housekeeping and pool care &middot; a curated welcome and
-            pre-arrival preparation.</p></div>
-        <div class="card"><span class="tag">2027</span>
-          <h3>Next season</h3>
-          <p>2027 rates release on 1 October 2026. Early enquiries are welcome —
-            write to the family directly.</p></div>
-        <div class="card"><span class="tag">On request</span>
-          <h3>Gatherings</h3>
-          <p>Private retreats, wellness stays, small weddings and small curated
-            events are considered on request.</p></div>
-      </div>
-      <p class="act"><a class="btn" href="mailto:info@molontaheritageestate.com?subject=Dates%20enquiry%20%E2%80%94%20Molonta%20Heritage%20Estate">Check your dates</a></p>
+    <div class="media">
+      <figure class="lead"><div class="ph"><img loading="lazy" src="https://static.wixstatic.com/media/caa724_2d23151f326944b4b7e7ef891d95636b~mv2.jpg/v1/fill/w_1200,h_900,al_c,q_85,enc_avif,quality_auto/caa724_2d23151f326944b4b7e7ef891d95636b~mv2.jpg" alt="Restored stone interiors of the house"></div>
+        <figcaption>Interiors, restored around the original walls</figcaption></figure>
+      <figure class="over"><div class="ph"><img loading="lazy" src="https://static.wixstatic.com/media/caa724_610c91a73e4447fc86ec543654b9ca0d~mv2.jpeg/v1/fill/w_900,h_600,al_c,q_85,enc_avif,quality_auto/caa724_610c91a73e4447fc86ec543654b9ca0d~mv2.jpeg" alt="The infinity pool and terraces"></div></figure>
     </div>
   </div>
 </section>
 
-<section class="band-panel" id="proof">
+<section class="feat flip" id="sea">
+  <div class="wrap">
+    <div>
+      <p class="kicker">02 &middot; The sea</p>
+      <h2>Steps from the garden to the Adriatic</h2>
+      <p>A private beach with its own mooring, kayak and shower &mdash; and the
+        estate&rsquo;s skippered Prestige 34 yacht, exclusive to guests, for
+        days on the water and Dubrovnik by sea along the Konavle cliffs.</p>
+      <ul>
+        <li>Private beach with mooring, kayak and shower</li>
+        <li>Skippered Prestige 34, exclusive to the estate&rsquo;s guests</li>
+        <li>Dubrovnik by sea, along the Konavle cliffs</li>
+      </ul>
+      <div class="act">
+        <a class="btn" href="mailto:info@molontaheritageestate.com?subject=Stay%20enquiry%20%E2%80%94%20Molonta%20Heritage%20Estate">Plan your stay</a>
+      </div>
+    </div>
+    <div class="media">
+      <figure class="lead"><div class="ph"><img loading="lazy" src="https://static.wixstatic.com/media/a64e37_c85c5d890c49471fb54a644190bbfa27~mv2.jpg/v1/fill/w_1200,h_900,al_c,q_85,enc_avif,quality_auto/a64e37_c85c5d890c49471fb54a644190bbfa27~mv2.jpg" alt="The private beach below the estate"></div>
+        <figcaption>The private beach, with its own mooring</figcaption></figure>
+      <figure class="over"><div class="ph"><img loading="lazy" src="https://static.wixstatic.com/media/a64e37_df0749b5a054413fa63377b4363a51b9~mv2.jpg/v1/fill/w_900,h_600,al_c,q_85,enc_avif,quality_auto/a64e37_df0749b5a054413fa63377b4363a51b9~mv2.jpg" alt="The estate's skippered Prestige 34 yacht"></div></figure>
+    </div>
+  </div>
+</section>
+
+<section class="feat band-panel" id="table">
+  <div class="wrap">
+    <div>
+      <p class="kicker">03 &middot; The table</p>
+      <h2>Grown here, pressed here, poured here</h2>
+      <p>The estate feeds its guests from its own land: oil from 250-year-old
+        olive trees, wine, citrus and figs, jams and liqueurs. An al fresco
+        kitchen for long evenings, a private chef on request &mdash; and a konoba
+        500&nbsp;m along the bay.</p>
+      <ul>
+        <li>Al fresco kitchen and dining in the gardens</li>
+        <li>Private chef on request</li>
+        <li>Estate olive oil, wine, citrus, figs, jams and liqueurs</li>
+        <li>A konoba 500&nbsp;m from the gate</li>
+      </ul>
+      <div class="act">
+        <a class="btn" href="mailto:info@molontaheritageestate.com?subject=Stay%20enquiry%20%E2%80%94%20Molonta%20Heritage%20Estate">Plan your stay</a>
+      </div>
+    </div>
+    <div class="media">
+      <figure class="lead"><div class="ph"><img loading="lazy" src="https://static.wixstatic.com/media/caa724_8afd80ceeab3401a9e4f4a9019cf91d5~mv2.jpg/v1/fill/w_1200,h_900,al_c,q_85,enc_avif,quality_auto/caa724_8afd80ceeab3401a9e4f4a9019cf91d5~mv2.jpg" alt="Al fresco dining at the outdoor kitchen"></div>
+        <figcaption>The outdoor kitchen, set for the evening</figcaption></figure>
+      <figure class="over"><div class="ph"><img loading="lazy" src="https://static.wixstatic.com/media/caa724_40af29631a324b77930b40600712dcdb~mv2.jpg/v1/fill/w_900,h_600,al_c,q_85,enc_avif,quality_auto/caa724_40af29631a324b77930b40600712dcdb~mv2.jpg" alt="Produce of the estate — the flavours of Molonta"></div></figure>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="track">
+    <span>Molonta &middot; Heritage Estate &middot; Molunat &middot; The western bay &middot;&nbsp;</span>
+    <span>Molonta &middot; Heritage Estate &middot; Molunat &middot; The western bay &middot;&nbsp;</span>
+  </div>
+</div>
+
+<section class="stays" id="rates">
+  <div class="wrap">
+    <p class="kicker">04 &middot; Rates &amp; stays</p>
+    <h2>2026, booked directly with the family</h2>
+    <table class="rates">
+      <tr><td>May &amp; October<small>Three-night minimum, arrive any day</small></td>
+        <td>&euro;1,850 a night</td></tr>
+      <tr><td>June &amp; September<small>Three-night minimum, arrive any day</small></td>
+        <td>&euro;2,250 a night</td></tr>
+      <tr><td>July &amp; August<small>Saturday to Saturday, seven nights</small></td>
+        <td>&euro;19,950 a week</td></tr>
+    </table>
+    <p class="terms">The whole estate, exclusively yours, with daily housekeeping,
+      24/7 concierge and a welcome prepared before you arrive. Small weddings and
+      events on request. 2027 rates are released on 1 October 2026.</p>
+    <p class="terms"><strong>Booked directly with the family &mdash; best rates, no
+      platform fees.</strong></p>
+    <div class="act" style="margin-top:26px;display:flex;gap:22px;align-items:center;flex-wrap:wrap">
+      <a class="btn" href="mailto:info@molontaheritageestate.com?subject=Stay%20enquiry%20%E2%80%94%20Molonta%20Heritage%20Estate">Plan your stay</a>
+      <a class="tel" href="tel:+38598428555">+385&nbsp;98&nbsp;428&nbsp;555</a>
+    </div>
+  </div>
+</section>
+
+<section class="family band-panel" id="family">
   <div class="wrap">
     <p class="kicker">Seen, said &amp; printed</p>
-    <h2>The estate, in its own pictures</h2>
-    <div class="shots">
-      <figure><div class="ph"><img src="https://static.wixstatic.com/media/a64e37_13e33cf7a09f4a1088b750cd2f19b458~mv2.jpg/v1/fill/w_980,h_653,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/a64e37_13e33cf7a09f4a1088b750cd2f19b458~mv2.jpg" alt="The estate above the western bay of Molunat" loading="lazy"></div><figcaption>The western bay of Molunat</figcaption></figure>
-      <figure><div class="ph"><img src="https://static.wixstatic.com/media/caa724_610c91a73e4447fc86ec543654b9ca0d~mv2.jpeg/v1/fill/w_323,h_215,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/caa724_610c91a73e4447fc86ec543654b9ca0d~mv2.jpeg" alt="The infinity pool and terraces" loading="lazy"></div><figcaption>Pool &amp; terraces</figcaption></figure>
-      <figure><div class="ph"><img src="https://static.wixstatic.com/media/caa724_9c3b829558644762a9cecffa8a13d5ce~mv2.jpeg/v1/fill/w_316,h_142,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/caa724_9c3b829558644762a9cecffa8a13d5ce~mv2.jpeg" alt="Steps from the estate to the sea" loading="lazy"></div><figcaption>Estate &amp; sea access</figcaption></figure>
-      <figure><div class="ph"><img src="https://static.wixstatic.com/media/caa724_2d23151f326944b4b7e7ef891d95636b~mv2.jpg/v1/fill/w_313,h_176,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/caa724_2d23151f326944b4b7e7ef891d95636b~mv2.jpg" alt="Restored stone interiors" loading="lazy"></div><figcaption>Interiors</figcaption></figure>
-      <figure><div class="ph"><img src="https://static.wixstatic.com/media/a64e37_df0749b5a054413fa63377b4363a51b9~mv2.jpg/v1/fill/w_309,h_174,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Jeanneau%20Prestige%2034%20resize.jpg" alt="The estate's skippered Prestige 34 yacht" loading="lazy"></div><figcaption>The estate yacht</figcaption></figure>
-      <figure><div class="ph"><img src="https://static.wixstatic.com/media/caa724_8afd80ceeab3401a9e4f4a9019cf91d5~mv2.jpg/v1/fill/w_309,h_174,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/AL%20Fresco%20dining%20%26%20outdoor%20kitchen.jpg" alt="Al fresco dining at the outdoor kitchen" loading="lazy"></div><figcaption>The outdoor kitchen</figcaption></figure>
+    <h2>Hosted by the family that built it</h2>
+    <div class="cols">
+      <div>
+        <p>The house went up in the 1930s and took the name Villa Palma in 1966;
+          today, renamed Molonta, it is kept by the third generation of the
+          Metkovi&#263; family &mdash; your hosts Lucija, Sanja and Nik&scaron;a &mdash;
+          who welcome one group at a time, arrange private door-to-door transfers
+          from Dubrovnik Airport, and prepare the house before you arrive.</p>
+      </div>
+      <div>
+        <blockquote>&ldquo;It is a very special place with very special people! Our
+          hearts are full and we couldn&rsquo;t recommend this place enough!&rdquo;
+          <footer>Sergiu &middot; Austria</footer></blockquote>
+        <blockquote>&ldquo;Thank you for everything! Because you have created this
+          wonderful place, we had great time and joy here.&rdquo;
+          <footer>Marijana, Pasqual, Marcus &amp; Christiane &middot; Germany</footer></blockquote>
+      </div>
     </div>
-
-    <div class="grid press">
-      <div class="card"><span class="tag">Cond&eacute; Nast Traveler</span>
+    <div class="press">
+      <article><span class="tag">Cond&eacute; Nast Traveler</span>
         <h3>In the press</h3>
         <p>&ldquo;My favorite Airbnb: A Dreamy Croatian Villa Overlooking the
-          Adriatic&rdquo; — <a class="plain" href="https://www.cntraveler.com/story/my-favorite-airbnb-a-dreamy-croatian-villa-overlooking-the-adriatic" rel="noopener nofollow" target="_blank">read the story</a></p></div>
-      <div class="card"><span class="tag">Architectural Digest</span>
+          Adriatic&rdquo; &mdash; <a class="plain" href="https://www.cntraveler.com/story/my-favorite-airbnb-a-dreamy-croatian-villa-overlooking-the-adriatic">read the story</a></p></article>
+      <article><span class="tag">Architectural Digest</span>
         <h3>In the press</h3>
         <p>Named among &ldquo;The Best Airbnbs in Croatia for an Adriatic
-          Summer&rdquo; — <a class="plain" href="https://www.architecturaldigest.com/story/best-airbnbs-in-croatia" rel="noopener nofollow" target="_blank">read the story</a></p></div>
-    </div>
-
-    <div class="grid" style="margin-top:34px">
-      <blockquote>&ldquo;It is a very special place with very special people! Our
-        hearts are full and we couldn&rsquo;t recommend this place enough!&rdquo;
-        <footer>Sergiu &middot; Austria</footer></blockquote>
-      <blockquote>&ldquo;Thank you for everything! Because you have created this
-        wonderful place, we had great time and joy here.&rdquo;
-        <footer>Marijana, Pasqual, Marcus &amp; Christiane &middot; Germany</footer></blockquote>
+          Summer&rdquo; &mdash; <a class="plain" href="https://www.architecturaldigest.com/story/best-airbnbs-in-croatia">read the story</a></p></article>
     </div>
   </div>
 </section>
 
-<section class="find" id="find-us">
+<section class="close band-deep">
   <div class="wrap">
-    <div>
-      <p class="kicker">Find us</p>
-      <address>Molunat 6<br>20218 Molunat<br>Croatia</address>
-      <ul>
-        <li><a class="plain" href="https://www.google.com/maps?q=42.4540911,18.4262772" rel="noopener nofollow" target="_blank">Open the map</a></li>
-        <li><a class="plain" href="tel:+38598428555">+385 98 428 555</a></li>
-        <li><a class="plain" href="mailto:info@molontaheritageestate.com">info@molontaheritageestate.com</a></li>
-      </ul>
-    </div>
-    <div>
-      <p class="kicker">Getting here</p>
-      <p>About 25 minutes from Dubrovnik Airport. The family arranges private,
-        door-to-door transfers — in high season, leave the hire car behind.</p>
-      <p class="act" style="margin-top:22px"><a class="btn" href="mailto:info@molontaheritageestate.com?subject=Stay%20enquiry%20%E2%80%94%20Molonta%20Heritage%20Estate">Plan your stay</a></p>
+    <p class="kicker">Molunat &middot; near Dubrovnik</p>
+    <h2>The whole estate, one group at a time</h2>
+    <p>Booked directly with the family &mdash; no platform fees.</p>
+    <div class="actions">
+      <a class="btn" href="mailto:info@molontaheritageestate.com?subject=Stay%20enquiry%20%E2%80%94%20Molonta%20Heritage%20Estate">Plan your stay</a>
+      <a class="tel" href="tel:+38598428555">+385&nbsp;98&nbsp;428&nbsp;555</a>
     </div>
   </div>
 </section>
 
 <footer class="site">
   <div class="wrap">
-    <span class="mark">Molonta Heritage Estate</span>
-    <span><a class="plain" href="https://www.instagram.com/molontaestate/" rel="noopener nofollow" target="_blank">Instagram</a>
-      &nbsp;&middot;&nbsp;
-      <a class="plain" href="https://www.facebook.com/profile.php?id=61570588708381" rel="noopener nofollow" target="_blank">Facebook</a></span>
-    <span class="quiet">Molunat 6, 20218 Molunat, Croatia &middot; +385 98 428 555</span>
+    <div>
+      <p class="mark">Molonta Heritage Estate</p>
+      <p class="quiet" style="max-width:34ch">A private waterfront heritage estate in
+        the western bay of Molunat.</p>
+    </div>
+    <div>
+      <address>Molunat 6<br>20218 Molunat<br>Croatia</address>
+      <ul>
+        <li><a class="plain" href="https://www.google.com/maps?q=42.4540911,18.4262772">Open the map</a></li>
+        <li><a href="tel:+38598428555">+385 98 428 555</a></li>
+        <li><a href="mailto:info@molontaheritageestate.com">info@molontaheritageestate.com</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="mark" style="font-size:13px">Getting here</p>
+      <p class="quiet">About 25 minutes from Dubrovnik Airport. The family arranges
+        private, door-to-door transfers &mdash; in high season, leave the hire car
+        behind.</p>
+      <ul>
+        <li><a class="plain" href="https://www.instagram.com/molontaestate">Instagram</a>
+          &nbsp;&middot;&nbsp; <a class="plain" href="https://www.facebook.com/profile.php?id=61570588708381">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="base">
+    <span>Molunat 6, 20218 Molunat, Croatia</span>
+    <span>+385 98 428 555</span>
   </div>
 </footer>
-
 </body>
 </html>

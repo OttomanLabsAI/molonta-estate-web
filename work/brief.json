@@ -289,7 +289,8 @@
   ],
   "skeleton": {
     "choice": "A (Tabbed)",
-    "reason": "By the picking rule this is B (single service, no timetable; simpler than C even though the primary action is a booking enquiry) — but B is shape-only, so per house-style.md the run defaults to the fully specified A, with the estate's four faces (Estate / Sea / Table / Rates) as the tab panels. Noting per the skill: B would have fitted better — that note is the trigger for specifying B."
+    "reason": "By the picking rule this is B (single service, no timetable; simpler than C even though the primary action is a booking enquiry) — but B is shape-only, so per house-style.md the run defaults to the fully specified A, with the estate's four faces (Estate / Sea / Table / Rates) as the tab panels. Noting per the skill: B would have fitted better — that note is the trigger for specifying B.",
+    "client_direction": "2026-08-24: flow and layout recut to match https://7balispa.co.uk/ (client reference) — full-viewport hero, oversized index links in place of tabs, alternating image/text features, marquee ribbon, big closing band, contact folded into the footer."
   },
   "notes": [
     "Instagram confirmed active: @molontaestate, location tag Molunat, Dubrovačko-Neretvanska (screenshot 2026-08-24). IG voice is calm and poetic ('Sit with the sea and let your mind go quiet') — page copy already sits in that register. A real wordmark/avatar exists on IG; the source logo file is still worth requesting."
