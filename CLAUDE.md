@@ -88,3 +88,4 @@ must keep tracing to the brief: no invented prices, dates, or claims, ever.
 | v1.4 | White, all the way down | Every ground on the page turns white — the cream panels go, and fine brown hairlines now carry the rhythm from the opening to the espresso close. |
 | v1.5 | From brown to beige | The palette softens into sand — beige display type, a darker beige for reading, and the page's two dark anchors greyed off into taupe. |
 | v1.6 | The Guest Guide, made a website | The estate's own brochure sets the brand — its gold, its nested wordmark, its olive branches — and every fact from the Guide and the whole site now lives on the page: the family's story since 1800, all services and prices, and the tables they trust. |
+| v1.7 | The journal joins the page | Sanja's writing gets its own section — three featured pieces and the full nineteen-post shelf, every one opening on the estate's own site — and the stolen Beuchling painting enters the story. |

@@ -251,6 +251,11 @@
       "value": "Molunat: Lancana, Monika, Odgusta Grill & Pizza · Konavle: Konavoski Dvori, Vinica Monković, Koraćeva Kuća · Cavtat: Bugenvila, Villa Banac, Dolium · St. Pietro: St. Pietro Restaurant · Šipan: BOWA · Ston: Kapetanova Kuća · Dubrovnik: 360, Nautika, Proto, Ezza, Marco Polo, Restaurant Dubrovnik, Panorama, Stara Loza, Rudjer, Bota Šare, Zuzori, Forty Four · Montenegro: Fisherman's Village Club (Luštica), Pool Restaurant (Mamula Island), Conte (Perast), Adriatica (Kamenari)",
       "source": "guest guide brochure (work/guest-guide.pdf; their own PDF linked from every site page; uploaded by client 2026-08-24)",
       "seen": "2026-08-24"
+    },
+    "journal": {
+      "value": "Blog live since Oct 2024, 19 posts, all by Sanja Metković: family history (500-year framing; roots in the Dubrovnik Republic; a painting of the house by Hans Beuchling, a returning German guest, displayed in the villa until stolen during the 1991–92 occupation; a guest's return after 46 years), estate life (olive harvest, carob, myrtle, quince, oranges, Konavle costume & jewellery), and positioning pieces (luxury-as-ease; Croatia's Global Peace Index safety ranking; unnamed prominent guests — athletes, entrepreneurs, club owners, investors, creative directors — 'We never mention names').",
+      "source": "site:/blog",
+      "seen": "2026-08-24"
     }
   },
   "conflicts": [
@@ -271,7 +276,9 @@
     },
     "Airport time: 20 min (location page) vs 25 min (homepage, FAQ) — on_page: 25 min (majority reading).",
     "Chef price: Guest Guide text layer holds both 'from 300 €' and 'from 400 €'; the visible card reads €400 — on_page: from €400.",
-    "Estate size RESOLVED: history page states 48,000 m² precisely — on_page: 48,000 m² / eleven acres."
+    "Estate size RESOLVED: history page states 48,000 m² precisely — on_page: 48,000 m² / eleven acres.",
+    "Estate size again: blog 'Story Behind' post says 50,000 m² vs history page's 48,000 m² (and FAQ '5 hectars', gallery 4.5 ha) — on_page: 48,000 m² (the dedicated history page's precise figure).",
+    "Founding era scatter across their own materials: 'over 500 years' (blog, Aug 2026) vs 'Dubrovnik Republic, likely late 18th century' (blog, Oct 2025) vs 'early 18th century' (history page) vs 'since 1800' (brochure). On_page: history + brochure readings ('roots reach back to the early 18th century' in the story; 'since 1800' in the brand line, as printed). Optional extra tape ammo."
   ],
   "gaps": [
     "Bedroom and bathroom count is stated nowhere on the homepage, FAQ, Experience, Gallery, History or Booking pages (third-party listings say 4 bedrooms / 4 baths — not used, unverified).",
@@ -351,6 +358,24 @@
     {
       "file": "https://static.wixstatic.com/media/caa724_42f9b74a59b7426d8eb180919b96fd99~mv2.jpg",
       "source": "site:/gallery (Heritage Details cover)",
+      "theirs": true,
+      "cleared": false
+    },
+    {
+      "file": "https://static.wixstatic.com/media/a64e37_3b64bb236e2046edaa86db6f468f0c5f~mv2.jpg",
+      "source": "site:/blog (500-years post cover — the Beuchling painting)",
+      "theirs": true,
+      "cleared": false
+    },
+    {
+      "file": "https://static.wixstatic.com/media/a64e37_2ddc19be11584a9f922ff34ffeefcfa5~mv2.jpg",
+      "source": "site:/blog (olive harvest cover)",
+      "theirs": true,
+      "cleared": false
+    },
+    {
+      "file": "https://static.wixstatic.com/media/a64e37_c889f235cbe24f459587558d2929eb0a~mv2.jpg",
+      "source": "site:/blog (luxury-is-ease cover)",
       "theirs": true,
       "cleared": false
     }
