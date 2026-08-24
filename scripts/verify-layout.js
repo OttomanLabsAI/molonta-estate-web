@@ -6,7 +6,8 @@
  *   node scripts/verify-layout.js --dir public \
  *     [--routes "/,/original/,/offer/"] \
  *     [--fonts "Oswald,Inter"] \
- *     [--original-host theirgym.co.uk]
+ *     [--original-host theirgym.co.uk] \
+ *     [--static-scan-exclude "original/"]
  *
  * Checks, per route × width:
  *   - route serves, non-empty
@@ -15,7 +16,9 @@
  *   - the named font families actually resolved (document.fonts)
  *   - zero network requests to the original live host or any tracker host
  * Plus a static scan of the files for asset references (src/link-href/url())
- * that still point at the live host — anchors linking out are allowed.
+ * that still point at the live host — anchors linking out are allowed, and
+ * paths under --static-scan-exclude are skipped (a page that frames the live
+ * site by design, like /original/, is exempt from the no-contact rule).
  *
  * Needs: npm i -D playwright-core, plus a system Chromium.
  */
@@ -75,10 +78,12 @@ function serve(dir) {
 }
 
 // Static scan: asset references (not plain anchors) that still point at a host.
-function staticLeakScan(dir, hosts) {
+function staticLeakScan(dir, hosts, excludes = []) {
   const hits = [];
   const walk = d => fs.readdirSync(d, { withFileTypes: true }).forEach(e => {
     const p = path.join(d, e.name);
+    const rel = path.relative(dir, p).split(path.sep).join('/');
+    if (excludes.some(x => rel === x.replace(/\/$/, '') || rel.startsWith(x.replace(/\/$/, '') + '/'))) return;
     if (e.isDirectory()) return walk(p);
     if (!/\.(html|css|js)$/i.test(e.name)) return;
     const text = fs.readFileSync(p, 'utf8');
@@ -96,13 +101,14 @@ async function main() {
   const routes = arg('--routes', '/,/original/,/offer/').split(',').map(s => s.trim()).filter(Boolean);
   const fonts = arg('--fonts', '').split(',').map(s => s.trim()).filter(Boolean);
   const originalHost = (arg('--original-host', '') || '').replace(/^www\./, '');
+  const staticExcludes = arg('--static-scan-exclude', '').split(',').map(s => s.trim()).filter(Boolean);
 
   const chromium = findChromium();
   if (!chromium) { console.error('No system Chromium found.'); process.exit(1); }
   const { chromium: pw } = require('playwright-core');
 
   const failures = [];
-  if (originalHost) staticLeakScan(dir, [originalHost]).forEach(h => failures.push(`[static] ${h}`));
+  if (originalHost) staticLeakScan(dir, [originalHost], staticExcludes).forEach(h => failures.push(`[static] ${h}`));
 
   const { server, port } = await serve(dir);
   const browser = await pw.launch({ executablePath: chromium, args: ['--no-sandbox', '--disable-dev-shm-usage'] });

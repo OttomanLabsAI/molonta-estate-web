@@ -7,7 +7,7 @@
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
     "check": "wrangler deploy --dry-run",
-    "verify": "node scripts/verify-layout.js --dir \"$PWD/public\" --routes \"/,/offer/\" --fonts \"Cormorant Garamond,Inter\" --original-host molontaheritageestate.com"
+    "verify": "node scripts/verify-layout.js --dir \"$PWD/public\" --routes \"/,/offer/\" --fonts \"Cormorant Garamond,Inter\" --original-host molontaheritageestate.com --static-scan-exclude \"original/\""
   },
   "devDependencies": {
     "wrangler": "^4.0.0",
