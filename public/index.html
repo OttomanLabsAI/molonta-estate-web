@@ -109,12 +109,12 @@
     .lockup h1{margin:0;color:#f3ead6;
       -webkit-mask-image:linear-gradient(#000 0 0),linear-gradient(#000 0 0);
       -webkit-mask-size:100% 100%,var(--holeW,200%) var(--holeH,var(--gap));
-      -webkit-mask-position:0 0,50% 52%;
+      -webkit-mask-position:0 0,50% var(--holeY,52%);
       -webkit-mask-repeat:no-repeat;
       -webkit-mask-composite:xor;
       mask-image:linear-gradient(#000 0 0),linear-gradient(#000 0 0);
       mask-size:100% 100%,var(--holeW,200%) var(--holeH,var(--gap));
-      mask-position:0 0,50% 52%;
+      mask-position:0 0,50% var(--holeY,52%);
       mask-repeat:no-repeat;
       mask-composite:exclude}
     /* padding-left mirrors the tracking after the final E, so the glyphs centre */
@@ -906,18 +906,36 @@
     }
   }
 
-  // Size the wordmark's window to the estate line: a hair's breadth (~1mm)
-  // of clearance on every side. The trailing letter-space after the final E
-  // is subtracted so the window sits symmetrically around the glyphs.
+  // Size the wordmark's window to the estate line's actual letterforms — the
+  // ink, not the line box — with a scant 1mm of clearance on every side.
   var lockup = document.querySelector('.lockup');
   var line = document.querySelector('.estate-line');
+  var h1 = lockup && lockup.querySelector('h1');
   function fitLockup() {
-    if (!lockup || !line) return;
+    if (!lockup || !line || !h1) return;
+    var cs = getComputedStyle(line);
+    var ctx = document.createElement('canvas').getContext('2d');
+    ctx.font = cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily;
+    if ('letterSpacing' in ctx) ctx.letterSpacing = cs.letterSpacing;
+    var m = ctx.measureText(line.textContent.trim().toUpperCase());
     var b = line.getBoundingClientRect();
-    var ls = parseFloat(getComputedStyle(line).letterSpacing) || 0;
-    var c = 4;
-    lockup.style.setProperty('--holeW', Math.round(b.width - 2 * ls + 2 * c) + 'px');
-    lockup.style.setProperty('--holeH', Math.round(b.height + 2 * c) + 'px');
+    var c = 3;
+    if (m.actualBoundingBoxAscent && m.fontBoundingBoxAscent) {
+      var inkW = m.actualBoundingBoxLeft + m.actualBoundingBoxRight;
+      var inkH = m.actualBoundingBoxAscent + m.actualBoundingBoxDescent;
+      var leading = b.height - (m.fontBoundingBoxAscent + m.fontBoundingBoxDescent);
+      var baseline = leading / 2 + m.fontBoundingBoxAscent;
+      var inkCenterY = b.top + baseline - m.actualBoundingBoxAscent + inkH / 2;
+      var holeH = inkH + 2 * c;
+      lockup.style.setProperty('--holeW', Math.round(inkW + 2 * c) + 'px');
+      lockup.style.setProperty('--holeH', Math.round(holeH) + 'px');
+      lockup.style.setProperty('--holeY',
+        Math.round(inkCenterY - h1.getBoundingClientRect().top - holeH / 2) + 'px');
+    } else {
+      var ls = parseFloat(cs.letterSpacing) || 0;
+      lockup.style.setProperty('--holeW', Math.round(b.width - 2 * ls + 2 * c) + 'px');
+      lockup.style.setProperty('--holeH', Math.round(b.height + 2 * c) + 'px');
+    }
   }
   fitLockup();
   window.addEventListener('resize', fitLockup);
