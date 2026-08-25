@@ -104,11 +104,19 @@
     /* The lockup, as their brochure sets it: HERITAGE ESTATE threaded through the
        wordmark — a clear stripe cut from the letters, the photo showing through */
     .lockup{position:relative;display:inline-block;--gap:clamp(28px,3vw,38px)}
+    /* Two mask layers XOR into a rectangular window behind the estate line;
+       without the measuring script the window spans full width (--holeW default). */
     .lockup h1{margin:0;color:#f3ead6;
-      -webkit-mask-image:linear-gradient(180deg,#000 calc(52% - var(--gap)/2),
-        transparent 0,transparent calc(52% + var(--gap)/2),#000 0);
-      mask-image:linear-gradient(180deg,#000 calc(52% - var(--gap)/2),
-        transparent 0,transparent calc(52% + var(--gap)/2),#000 0)}
+      -webkit-mask-image:linear-gradient(#000 0 0),linear-gradient(#000 0 0);
+      -webkit-mask-size:100% 100%,var(--holeW,200%) var(--holeH,var(--gap));
+      -webkit-mask-position:0 0,50% 52%;
+      -webkit-mask-repeat:no-repeat;
+      -webkit-mask-composite:xor;
+      mask-image:linear-gradient(#000 0 0),linear-gradient(#000 0 0);
+      mask-size:100% 100%,var(--holeW,200%) var(--holeH,var(--gap));
+      mask-position:0 0,50% 52%;
+      mask-repeat:no-repeat;
+      mask-composite:exclude}
     .estate-line{position:absolute;top:52%;left:50%;transform:translate(-50%,-50%);
       padding:3px 16px;margin:0;white-space:nowrap;
       font-family:var(--display);font-weight:600;letter-spacing:.4em;
@@ -885,16 +893,32 @@
 <script>
 (function () {
   var track = document.querySelector('.gallery .track');
-  if (!track) return;
-  var btns = document.querySelectorAll('.gal-btn');
-  for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener('click', function () {
-      var fig = track.querySelector('figure');
-      var step = (fig ? fig.getBoundingClientRect().width : 320) + 22;
-      track.scrollBy({ left: this.classList.contains('prev') ? -step : step,
-        behavior: 'smooth' });
-    });
+  if (track) {
+    var btns = document.querySelectorAll('.gal-btn');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener('click', function () {
+        var fig = track.querySelector('figure');
+        var step = (fig ? fig.getBoundingClientRect().width : 320) + 22;
+        track.scrollBy({ left: this.classList.contains('prev') ? -step : step,
+          behavior: 'smooth' });
+      });
+    }
   }
+
+  // Size the wordmark's window to the estate line: the cut ends beside the
+  // text at the same distance as the clearance above and below it.
+  var lockup = document.querySelector('.lockup');
+  var line = document.querySelector('.estate-line');
+  function fitLockup() {
+    if (!lockup || !line) return;
+    var b = line.getBoundingClientRect();
+    var c = Math.max(4, Math.round(b.height * 0.18));
+    lockup.style.setProperty('--holeW', Math.round(b.width + 2 * c) + 'px');
+    lockup.style.setProperty('--holeH', Math.round(b.height + 2 * c) + 'px');
+  }
+  fitLockup();
+  window.addEventListener('resize', fitLockup);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitLockup);
 })();
 </script>
 </body>
