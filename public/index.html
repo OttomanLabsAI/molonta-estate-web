@@ -117,8 +117,9 @@
       mask-position:0 0,50% 52%;
       mask-repeat:no-repeat;
       mask-composite:exclude}
+    /* padding-left mirrors the tracking after the final E, so the glyphs centre */
     .estate-line{position:absolute;top:52%;left:50%;transform:translate(-50%,-50%);
-      padding:3px 16px;margin:0;white-space:nowrap;
+      padding:0 0 0 .4em;margin:0;white-space:nowrap;
       font-family:var(--display);font-weight:600;letter-spacing:.4em;
       text-transform:uppercase;font-size:clamp(.72rem,2.2vw,1.05rem);color:#f3ead6}
     .since{font:600 11px/1.5 var(--body);letter-spacing:.3em;text-transform:uppercase;
@@ -905,15 +906,17 @@
     }
   }
 
-  // Size the wordmark's window to the estate line: the cut ends beside the
-  // text at the same distance as the clearance above and below it.
+  // Size the wordmark's window to the estate line: a hair's breadth (~1mm)
+  // of clearance on every side. The trailing letter-space after the final E
+  // is subtracted so the window sits symmetrically around the glyphs.
   var lockup = document.querySelector('.lockup');
   var line = document.querySelector('.estate-line');
   function fitLockup() {
     if (!lockup || !line) return;
     var b = line.getBoundingClientRect();
-    var c = Math.max(4, Math.round(b.height * 0.18));
-    lockup.style.setProperty('--holeW', Math.round(b.width + 2 * c) + 'px');
+    var ls = parseFloat(getComputedStyle(line).letterSpacing) || 0;
+    var c = 4;
+    lockup.style.setProperty('--holeW', Math.round(b.width - 2 * ls + 2 * c) + 'px');
     lockup.style.setProperty('--holeH', Math.round(b.height + 2 * c) + 'px');
   }
   fitLockup();
