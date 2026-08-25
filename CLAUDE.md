@@ -96,3 +96,4 @@ must keep tracing to the brief: no invented prices, dates, or claims, ever.
 | v1.12 | A hair's breadth around the estate line | The opening in the wordmark closes in until only a millimetre of light holds between HERITAGE ESTATE and the letters around it. |
 | v1.13 | The Guest Guide, told in full sentences | The estate's brochure is rebuilt page for page — every photograph where it was, every price as printed — and each service now explains itself in a line or two: what it includes, its minimums, and how the family arranges it. |
 | v1.14 | The window closes to the ink | The opening around HERITAGE ESTATE is measured from the letterforms themselves now — a bare millimetre of ground between the small caps and the big letters, above, below and beside. |
+| v1.15 | The setup promise, said in full | The offer's Setup card now says the whole of it: every account created and handed over — or moved into the accounts the estate already keeps. |
