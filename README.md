@@ -42,7 +42,9 @@ it) and a Chromium on PATH.
 ## Deployment
 
 Connected to Cloudflare Workers Builds: every push to `main` deploys to
-production. This is a pitch demo — `robots.txt` disallows everything, every
+production. The social thumbnail (`public/og.jpg`) is referenced by
+absolute URL in each page's Open Graph tags — repoint those URLs when the site
+moves to its own domain. This is a pitch demo — `robots.txt` disallows everything, every
 page carries `noindex,nofollow`, and an `X-Robots-Tag` header backs both up.
 
 ## External resources

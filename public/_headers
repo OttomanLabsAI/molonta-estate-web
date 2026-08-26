@@ -10,6 +10,10 @@
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable
 
+# The social thumbnail can cache for a day.
+/og.jpg
+  Cache-Control: public, max-age=86400
+
 # HTML must stay fresh so a deploy is visible immediately.
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
